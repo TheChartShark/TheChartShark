@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plans - The Chart Shark</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        /* LIVE TRADING TICKER */
+        .trading-ticker {
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+            border-bottom: 2px solid #00ff88;
+            padding: 0.5rem 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            height: 40px;
+        }
+       
+        .ticker-content {
+            display: flex;
+            animation: tickerScroll 40s linear infinite;
+            white-space: nowrap;
+        }
+       
+        .ticker-item {
+            margin-right: 4rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+       
+        .ticker-symbol {
+            color: #00d4ff;
+            margin-right: 0.5rem;
+        }
+       
+        .ticker-price {
+            color: #00ff88;
+            margin-right: 0.5rem;
+        }
+       
+        .ticker-change {
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+        }
+       
+        .ticker-change.positive {
+            color: #00ff88;
+        }
+       
+        .ticker-change.negative {
+            color: #ff6b35;
+        }
+       
+        .ticker-status {
+            font-size: 0.7rem;
+            color: #00ff88;
+            margin-left: 0.5rem;
+        }
+       
+        @keyframes tickerScroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* MAIN WEBSITE STYLES */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding-top: 40px; /* For ticker */
+        }
+       
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 40px; /* Below ticker */
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+       
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+       
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ff88;
+        }
+       
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+       
+        /* LANGUAGE TOGGLE STYLES */
+        .language-toggle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+       
+        .lang-switch {
+            position: relative;
+            width: 90px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+        }
+       
+        .lang-switch:hover {
+            border-color: rgba(0, 255, 136, 0.6);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+       
+        .lang-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 24px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: #000;
+        }
+       
+        .lang-switch.spanish .lang-slider {
+            transform: translateX(30px);
+        }
+       
+        .lang-switch.chinese .lang-slider {
+            transform: translateX(60px);
+        }
+       
+        .lang-labels {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+       
+        .lang-label {
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s ease;
+            cursor: pointer;
+            min-width: 24px;
+            text-align: center;
+        }
+       
+        .lang-label.active {
+            color: #00ff88;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+       
+        .nav-btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+       
+        .home-btn {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #000;
+        }
+       
+        .discord-btn {
+            background: #5865f2;
+            color: white;
+        }
+       
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* PREMIUM PAGE STYLES */
+        .premium-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+       
+        .premium-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+       
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.8)); }
+        }
+       
+        .premium-subtitle {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        /* PRICING CARDS */
+        .pricing-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+       
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+       
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+       
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 255, 136, 0.6);
+        }
+       
+        .pricing-card.featured {
+            border: 2px solid #ff6b35;
+            transform: scale(1.05);
+        }
+       
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 0.5rem 3rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+       
+        .plan-name {
+            font-size: 2rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+       
+        .plan-price {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+       
+        .plan-period {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+       
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+       
+        .plan-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+       
+        .plan-features li::before {
+            content: "✅";
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+       
+        .plan-features li.premium-only {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+       
+        .plan-features li.premium-only::before {
+            content: "🔥";
+        }
+       
+        .cta-button {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #000;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+       
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.4);
+        }
+       
+        .cta-button.premium {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+        }
+       
+        .cta-button.premium:hover {
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+       
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00ff88;
+            margin-bottom: 3rem;
+        }
+       
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+       
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border-left: 4px solid #00ff88;
+        }
+       
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+       
+        .testimonial-author {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+       
+        .testimonial-tier {
+            color: #ff6b35;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+       
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 3rem;
+        }
+       
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 1rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+       
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+       
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+       
+        .faq-answer {
+            padding: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* GUARANTEE SECTION */
+        .guarantee {
+            background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 20px;
+        }
+       
+        .guarantee h3 {
+            font-size: 2rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+       
+        .guarantee p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+       
+        .disclaimer {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid #ffc107;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #ffc107;
+        }
+
+        @media (max-width: 768px) {
+            .premium-hero h1 {
+                font-size: 2.5rem;
+            }
+           
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+           
+            .pricing-card.featured {
+                transform: none;
+            }
+           
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+           
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LIVE TRADING TICKER -->
+    <div class="trading-ticker">
+        <div class="ticker-content">
+            <div class="ticker-item">
+                <span class="ticker-symbol">BTC/USD</span>
+                <span class="ticker-price">$107,565</span>
+                <span class="ticker-change negative">-0.22%</span>
+                <span class="ticker-status">🔴 LIVE</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">ETH/USD</span>
+                <span class="ticker-price">$2,519.6</span>
+                <span class="ticker-change negative">-0.45%</span>
+                <span class="ticker-status">🔴 LIVE</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">SPY</span>
+                <span class="ticker-price">$579.11</span>
+                <span class="ticker-change negative">-0.68%</span>
+                <span class="ticker-status">🔴 LIVE</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">TSLA</span>
+                <span class="ticker-price">$339.39</span>
+                <span class="ticker-change positive">+1.2%</span>
+                <span class="ticker-status">🔴 LIVE</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">AAPL</span>
+                <span class="ticker-price">$195.34</span>
+                <span class="ticker-change positive">+0.5%</span>
+                <span class="ticker-status">🔴 LIVE</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">NVDA</span>
+                <span class="ticker-price">$131.31</span>
+                <span class="ticker-change negative">-0.8%</span>
+                <span class="ticker-status">🔴 LIVE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">📈 <span data-en="The Chart Shark" data-es="El Tiburón del Gráfico" data-cn="图表鲨鱼">The Chart Shark</span></div>
+            <div class="nav-buttons">
+                <div class="language-toggle">
+                    <div class="lang-labels">
+                        <span class="lang-label active" id="enLabel">EN</span>
+                        <div class="lang-switch" id="langSwitch">
+                            <div class="lang-slider">EN</div>
+                        </div>
+                        <span class="lang-label" id="esLabel">ES</span>
+                        <span class="lang-label" id="cnLabel">中</span>
+                    </div>
+                </div>
+                <a href="index.html" class="nav-btn home-btn" data-en="← Back to Home" data-es="← Volver al Inicio" data-cn="← 返回首页">← Back to Home</a>
+                <a href="https://discord.gg/AQ2S8KxDS5" class="nav-btn discord-btn" data-en="Join Discord" data-es="Únete a Discord" data-cn="加入Discord">Join Discord</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PREMIUM HERO -->
+    <section class="premium-hero">
+        <h1 data-en="🔥 PREMIUM ACCESS 🔥" data-es="🔥 ACCESO PREMIUM 🔥" data-cn="🔥 高级访问 🔥">🔥 PREMIUM ACCESS 🔥</h1>
+        <div class="premium-subtitle" data-en="Unlock Elite Trading Strategies & Exclusive Benefits" data-es="Desbloquea Estrategias de Trading Elite y Beneficios Exclusivos" data-cn="解锁精英交易策略和独家福利">Unlock Elite Trading Strategies & Exclusive Benefits</div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <!-- STARTER TIER -->
+            <div class="pricing-card featured">
+                <div class="plan-name">Premium Starter</div>
+                <div class="plan-price">$50</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li class="premium-only">Premium Discord Channels</li>
+                    <li class="premium-only">Advanced Trading Guides</li>
+                    <li class="premium-only">Weekly Strategy Sessions</li>
+                    <li class="premium-only">Basic Trading Alerts</li>
+                    <li class="premium-only">Priority Support</li>
+                    <li class="premium-only">Educational Content Library</li>
+                    <li class="premium-only">Market Analysis Reports</li>
+                </ul>
+                <a href="#" class="cta-button premium" id="starterPayment">Get Starter Access</a>
+            </div>
+
+            <!-- PRO TIER -->
+            <div class="pricing-card">
+                <div class="plan-name">Pro Trader</div>
+                <div class="plan-price">$500</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>Everything in Starter +</li>
+                    <li class="premium-only">🔥 Live Trading Calls</li>
+                    <li class="premium-only">🔥 Real-time Market Insights</li>
+                    <li class="premium-only">1-on-1 Coaching Sessions</li>
+                    <li class="premium-only">Custom Trading Plans</li>
+                    <li class="premium-only">Direct Access to Pro Traders</li>
+                    <li class="premium-only">VIP Discord Access</li>
+                    <li class="premium-only">Real-time Portfolio Reviews</li>
+                    <li class="premium-only">Personal Trading Mentor</li>
+                </ul>
+                <a href="#" class="cta-button premium" id="proPayment">Get Pro Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="guarantee">
+        <h3>🛡️ 30-Day Money Back Guarantee</h3>
+        <p>Not satisfied with your premium experience? Get a full refund within 30 days, no questions asked. We're confident you'll love the value we provide.</p>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2>What Our Premium Members Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-text">"The live trading calls have completely transformed my trading. I've made back my subscription fee in just the first week!"</div>
+                <div class="testimonial-author">Sarah K.</div>
+                <div class="testimonial-tier">Premium Starter Member</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"1-on-1 coaching with the pros gave me strategies I never would have discovered on my own. Worth every penny."</div>
+                <div class="testimonial-author">Mike R.</div>
+                <div class="testimonial-tier">Pro Trader Member</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"The community and insights from other premium traders is invaluable. Best trading investment I've made."</div>
+                <div class="testimonial-author">James T.</div>
+                <div class="testimonial-tier">Pro Trader Member</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What's included in Premium Starter?</div>
+            <div class="faq-answer">Premium Starter includes premium Discord channels, advanced trading guides, weekly strategy sessions, basic trading alerts, and priority support.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How does the 1-on-1 coaching work?</div>
+            <div class="faq-answer">Pro Trader members get monthly 1-on-1 video calls with our professional traders to review your portfolio, discuss strategies, and create custom trading plans.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I cancel anytime?</div>
+            <div class="faq-answer">Yes! You can cancel your subscription at any time. No long-term contracts or commitments required.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Do you offer refunds?</div>
+            <div class="faq-answer">We offer a 30-day money-back guarantee. If you're not satisfied with your premium experience, we'll provide a full refund within 30 days.</div>
+        </div>
+    </section>
+
+    <div class="disclaimer">
+        <strong>Risk Disclaimer:</strong> Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose. Premium membership provides educational content and community access, not guaranteed profits.
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 The Chart Shark. All rights reserved.</p>
+        <p>Premium Trading Education & Community Platform</p>
+        <div style="margin-top: 1rem;">
+            <a href="index.html" style="color: #00ff88; text-decoration: none; margin: 0 1rem;">Home</a>
+            <a href="https://discord.gg/AQ2S8KxDS5" style="color: #00d4ff; text-decoration: none; margin: 0 1rem;">Discord</a>
+        </div>
+    </footer>
+
+    <script>
+        // LANGUAGE SWITCHING FUNCTIONALITY
+        let currentLanguage = 'en';
+       
+        function initLanguageToggle() {
+            const langSwitch = document.getElementById('langSwitch');
+            const langSlider = langSwitch.querySelector('.lang-slider');
+            const enLabel = document.getElementById('enLabel');
+            const esLabel = document.getElementById('esLabel');
+            const cnLabel = document.getElementById('cnLabel');
+           
+            // Toggle language on click
+            langSwitch.addEventListener('click', toggleLanguage);
+            enLabel.addEventListener('click', () => setLanguage('en'));
+            esLabel.addEventListener('click', () => setLanguage('es'));
+            cnLabel.addEventListener('click', () => setLanguage('cn'));
+           
+            function toggleLanguage() {
+                let newLang;
+                if (currentLanguage === 'en') {
+                    newLang = 'es';
+                } else if (currentLanguage === 'es') {
+                    newLang = 'cn';
+                } else {
+                    newLang = 'en';
+                }
+                setLanguage(newLang);
+            }
+           
+            function setLanguage(lang) {
+                currentLanguage = lang;
+               
+                // Update toggle UI
+                enLabel.classList.remove('active');
+                esLabel.classList.remove('active');
+                cnLabel.classList.remove('active');
+                langSwitch.classList.remove('spanish', 'chinese');
+               
+                if (lang === 'es') {
+                    langSwitch.classList.add('spanish');
+                    langSlider.textContent = 'ES';
+                    esLabel.classList.add('active');
+                } else if (lang === 'cn') {
+                    langSwitch.classList.add('chinese');
+                    langSlider.textContent = '中';
+                    cnLabel.classList.add('active');
+                } else {
+                    langSlider.textContent = 'EN';
+                    enLabel.classList.add('active');
+                }
+               
+                // Update all text elements
+                updatePageLanguage(lang);
+            }
+           
+            function updatePageLanguage(lang) {
+                // Update elements with data attributes
+                const elements = document.querySelectorAll('[data-en][data-es][data-cn]');
+                elements.forEach(element => {
+                    const text = element.getAttribute(`data-${lang}`);
+                    if (text) {
+                        element.textContent = text;
+                    }
+                });
+               
+                // Update pricing content
+                updatePricingContent(lang);
+                
+                // Update testimonials
+                updateTestimonials(lang);
+                
+                // Update FAQ
+                updateFAQ(lang);
+                
+                // Update other sections
+                updateOtherSections(lang);
+            }
+            
+            function updatePricingContent(lang) {
+                const pricing = {
+                    en: {
+                        starterTitle: "Premium Starter",
+                        proTitle: "Pro Trader",
+                        perMonth: "per month",
+                        starterFeatures: [
+                            "Premium Discord Channels",
+                            "Advanced Trading Guides", 
+                            "Weekly Strategy Sessions",
+                            "Basic Trading Alerts",
+                            "Priority Support",
+                            "Educational Content Library",
+                            "Market Analysis Reports"
+                        ],
+                        proFeatures: [
+                            "Everything in Starter +",
+                            "🔥 Live Trading Calls",
+                            "🔥 Real-time Market Insights", 
+                            "1-on-1 Coaching Sessions",
+                            "Custom Trading Plans",
+                            "Direct Access to Pro Traders",
+                            "VIP Discord Access",
+                            "Real-time Portfolio Reviews",
+                            "Personal Trading Mentor"
+                        ],
+                        starterBtn: "Get Starter Access",
+                        proBtn: "Get Pro Access"
+                    },
+                    es: {
+                        starterTitle: "Premium Inicial",
+                        proTitle: "Trader Profesional", 
+                        perMonth: "por mes",
+                        starterFeatures: [
+                            "Canales Premium de Discord",
+                            "Guías Avanzadas de Trading",
+                            "Sesiones de Estrategia Semanales", 
+                            "Alertas Básicas de Trading",
+                            "Soporte Prioritario",
+                            "Biblioteca de Contenido Educativo",
+                            "Reportes de Análisis de Mercado"
+                        ],
+                        proFeatures: [
+                            "Todo en Inicial +",
+                            "🔥 Llamadas de Trading en Vivo",
+                            "🔥 Insights de Mercado en Tiempo Real",
+                            "Sesiones de Coaching 1-a-1", 
+                            "Planes de Trading Personalizados",
+                            "Acceso Directo a Traders Pro",
+                            "Acceso VIP a Discord",
+                            "Revisiones de Portafolio en Tiempo Real",
+                            "Mentor Personal de Trading"
+                        ],
+                        starterBtn: "Obtener Acceso Inicial",
+                        proBtn: "Obtener Acceso Pro"
+                    },
+                    cn: {
+                        starterTitle: "高级入门版",
+                        proTitle: "专业交易者",
+                        perMonth: "每月",
+                        starterFeatures: [
+                            "Discord高级频道",
+                            "高级交易指南",
+                            "每周策略会议",
+                            "基础交易提醒", 
+                            "优先支持",
+                            "教育内容库",
+                            "市场分析报告"
+                        ],
+                        proFeatures: [
+                            "入门版所有功能 +",
+                            "🔥 实时交易电话",
+                            "🔥 实时市场洞察",
+                            "一对一指导会议",
+                            "定制交易计划", 
+                            "直接接触专业交易者",
+                            "VIP Discord访问",
+                            "实时投资组合审查",
+                            "个人交易导师"
+                        ],
+                        starterBtn: "获取入门版访问",
+                        proBtn: "获取专业版访问"
+                    }
+                };
+                
+                // Update plan titles
+                const starterTitle = document.querySelector('.pricing-card:first-child .plan-name');
+                const proTitle = document.querySelector('.pricing-card:last-child .plan-name');
+                if (starterTitle) starterTitle.textContent = pricing[lang].starterTitle;
+                if (proTitle) proTitle.textContent = pricing[lang].proTitle;
+                
+                // Update "per month" text
+                const periodTexts = document.querySelectorAll('.plan-period');
+                periodTexts.forEach(period => {
+                    period.textContent = pricing[lang].perMonth;
+                });
+                
+                // Update starter features
+                const starterFeatures = document.querySelectorAll('.pricing-card:first-child .plan-features li');
+                starterFeatures.forEach((li, index) => {
+                    if (pricing[lang].starterFeatures[index]) {
+                        li.textContent = pricing[lang].starterFeatures[index];
+                        li.classList.add('premium-only');
+                    }
+                });
+                
+                // Update pro features
+                const proFeatures = document.querySelectorAll('.pricing-card:last-child .plan-features li');
+                proFeatures.forEach((li, index) => {
+                    if (pricing[lang].proFeatures[index]) {
+                        li.textContent = pricing[lang].proFeatures[index];
+                        if (index > 0) li.classList.add('premium-only');
+                    }
+                });
+                
+                // Update buttons
+                const starterBtn = document.getElementById('starterPayment');
+                const proBtn = document.getElementById('proPayment');
+                if (starterBtn) starterBtn.textContent = pricing[lang].starterBtn;
+                if (proBtn) proBtn.textContent = pricing[lang].proBtn;
+            }
+            
+            function updateTestimonials(lang) {
+                const testimonials = {
+                    en: {
+                        heading: "What Our Premium Members Say",
+                        quotes: [
+                            "The live trading calls have completely transformed my trading. I've made back my subscription fee in just the first week!",
+                            "1-on-1 coaching with the pros gave me strategies I never would have discovered on my own. Worth every penny.",
+                            "The community and insights from other premium traders is invaluable. Best trading investment I've made."
+                        ]
+                    },
+                    es: {
+                        heading: "Lo Que Dicen Nuestros Miembros Premium",
+                        quotes: [
+                            "Las llamadas de trading en vivo han transformado completamente mi trading. ¡Recuperé mi cuota de suscripción en solo la primera semana!",
+                            "El coaching 1-a-1 con los profesionales me dio estrategias que nunca habría descubierto por mi cuenta. Vale cada centavo.",
+                            "La comunidad y los insights de otros traders premium son invaluables. La mejor inversión en trading que he hecho."
+                        ]
+                    },
+                    cn: {
+                        heading: "我们的高级会员评价",
+                        quotes: [
+                            "实时交易电话彻底改变了我的交易。仅在第一周我就赚回了订阅费！",
+                            "与专业人士的一对一指导给了我自己永远不会发现的策略。物超所值。",
+                            "来自其他高级交易者的社区和见解是无价的。这是我做过的最好的交易投资。"
+                        ]
+                    }
+                };
+                
+                const heading = document.querySelector('.testimonials h2');
+                if (heading) heading.textContent = testimonials[lang].heading;
+                
+                const quotes = document.querySelectorAll('.testimonial-text');
+                quotes.forEach((quote, index) => {
+                    if (testimonials[lang].quotes[index]) {
+                        quote.textContent = `"${testimonials[lang].quotes[index]}"`;
+                    }
+                });
+            }
+            
+            function updateFAQ(lang) {
+                const faq = {
+                    en: {
+                        heading: "Frequently Asked Questions",
+                        questions: [
+                            "What's included in Premium Starter?",
+                            "How does the 1-on-1 coaching work?", 
+                            "Can I cancel anytime?",
+                            "Do you offer refunds?"
+                        ],
+                        answers: [
+                            "Premium Starter includes premium Discord channels, advanced trading guides, weekly strategy sessions, basic trading alerts, and priority support.",
+                            "Pro Trader members get monthly 1-on-1 video calls with our professional traders to review your portfolio, discuss strategies, and create custom trading plans.",
+                            "Yes! You can cancel your subscription at any time. No long-term contracts or commitments required.",
+                            "We offer a 30-day money-back guarantee. If you're not satisfied with your premium experience, we'll provide a full refund within 30 days."
+                        ]
+                    },
+                    es: {
+                        heading: "Preguntas Frecuentes",
+                        questions: [
+                            "¿Qué incluye Premium Inicial?",
+                            "¿Cómo funciona el coaching 1-a-1?",
+                            "¿Puedo cancelar en cualquier momento?", 
+                            "¿Ofrecen reembolsos?"
+                        ],
+                        answers: [
+                            "Premium Inicial incluye canales premium de Discord, guías avanzadas de trading, sesiones de estrategia semanales, alertas básicas de trading y soporte prioritario.",
+                            "Los miembros Trader Profesional obtienen llamadas de video mensuales 1-a-1 con nuestros traders profesionales para revisar su portafolio, discutir estrategias y crear planes de trading personalizados.",
+                            "¡Sí! Puedes cancelar tu suscripción en cualquier momento. No se requieren contratos a largo plazo o compromisos.",
+                            "Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás satisfecho con tu experiencia premium, proporcionaremos un reembolso completo dentro de 30 días."
+                        ]
+                    },
+                    cn: {
+                        heading: "常见问题",
+                        questions: [
+                            "高级入门版包括什么？",
+                            "一对一指导如何运作？",
+                            "我可以随时取消吗？",
+                            "你们提供退款吗？"
+                        ],
+                        answers: [
+                            "高级入门版包括Discord高级频道、高级交易指南、每周策略会议、基础交易提醒和优先支持。",
+                            "专业交易者会员每月与我们的专业交易者进行一对一视频通话，审查您的投资组合，讨论策略，并制定定制交易计划。",
+                            "是的！您可以随时取消订阅。无需长期合同或承诺。",
+                            "我们提供30天退款保证。如果您对高级体验不满意，我们将在30天内提供全额退款。"
+                        ]
+                    }
+                };
+                
+                const heading = document.querySelector('.faq-section h2');
+                if (heading) heading.textContent = faq[lang].heading;
+                
+                const questions = document.querySelectorAll('.faq-question');
+                const answers = document.querySelectorAll('.faq-answer');
+                
+                questions.forEach((question, index) => {
+                    if (faq[lang].questions[index]) {
+                        question.textContent = faq[lang].questions[index];
+                    }
+                });
+                
+                answers.forEach((answer, index) => {
+                    if (faq[lang].answers[index]) {
+                        answer.textContent = faq[lang].answers[index];
+                    }
+                });
+            }
+            
+            function updateOtherSections(lang) {
+                const content = {
+                    en: {
+                        guarantee: "🛡️ 30-Day Money Back Guarantee",
+                        guaranteeText: "Not satisfied with your premium experience? Get a full refund within 30 days, no questions asked. We're confident you'll love the value we provide.",
+                        disclaimer: "Risk Disclaimer:",
+                        disclaimerText: "Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose. Premium membership provides educational content and community access, not guaranteed profits.",
+                        footerDesc: "Premium Trading Education & Community Platform"
+                    },
+                    es: {
+                        guarantee: "🛡️ Garantía de Devolución de 30 Días",
+                        guaranteeText: "¿No estás satisfecho con tu experiencia premium? Obtén un reembolso completo dentro de 30 días, sin preguntas. Estamos seguros de que amarás el valor que proporcionamos.",
+                        disclaimer: "Aviso de Riesgo:",
+                        disclaimerText: "El trading implica un riesgo sustancial y no es adecuado para todos los inversores. El rendimiento pasado no garantiza resultados futuros. Solo opera con dinero que puedas permitirte perder. La membresía premium proporciona contenido educativo y acceso a la comunidad, no ganancias garantizadas.",
+                        footerDesc: "Plataforma Premium de Educación y Comunidad de Trading"
+                    },
+                    cn: {
+                        guarantee: "🛡️ 30天退款保证",
+                        guaranteeText: "对您的高级体验不满意？在30天内获得全额退款，无需任何理由。我们相信您会喜欢我们提供的价值。",
+                        disclaimer: "风险提示：",
+                        disclaimerText: "交易涉及重大风险，不适合所有投资者。过往表现不能保证未来结果。只能用您承受得起损失的资金进行交易。高级会员提供教育内容和社区访问，不保证利润。",
+                        footerDesc: "高级交易教育和社区平台"
+                    }
+                };
+                
+                // Update guarantee section
+                const guaranteeTitle = document.querySelector('.guarantee h3');
+                const guaranteeText = document.querySelector('.guarantee p');
+                if (guaranteeTitle) guaranteeTitle.textContent = content[lang].guarantee;
+                if (guaranteeText) guaranteeText.textContent = content[lang].guaranteeText;
+                
+                // Update disclaimer
+                const disclaimerStrong = document.querySelector('.disclaimer strong');
+                const disclaimerSpan = document.querySelector('.disclaimer').childNodes[2];
+                if (disclaimerStrong) disclaimerStrong.textContent = content[lang].disclaimer;
+                if (disclaimerSpan) disclaimerSpan.textContent = ` ${content[lang].disclaimerText}`;
+                
+                // Update footer
+                const footerDesc = document.querySelectorAll('.footer p')[1];
+                if (footerDesc) footerDesc.textContent = content[lang].footerDesc;
+            }
+        }
+
+        // Initialize language toggle when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageToggle();
+        });
+
+        // Add click handlers for payment buttons - you'll replace these URLs with your Square links
+        document.getElementById('starterPayment').addEventListener('click', function(e) {
+            e.preventDefault();
+            // $50/month Premium Starter plan
+            window.open('https://square.link/u/R4I2GNFd?src=sheet', '_blank');
+        });
+
+        document.getElementById('proPayment').addEventListener('click', function(e) {
+            e.preventDefault();
+            // $500/month Pro Trader plan
+            window.open('https://square.link/u/x81vNxI8?src=sheet', '_blank');
+        });
+
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                
+                // Hide all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Show clicked answer if it wasn't visible
+                if (!isVisible) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Initially hide all FAQ answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+
+        console.log('🔥 PREMIUM PAGE LOADED 🔥\nMulti-language support: EN → ES → 中\nReady for Square payment integration!');
+    </script>
+</body>
+</html>
