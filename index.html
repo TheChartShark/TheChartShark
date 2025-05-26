@@ -18,7 +18,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #000000 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,142 +36,72 @@
             text-align: center;
             color: white;
             position: relative;
-            animation: splashPulse 3s ease-in-out infinite;
         }
        
         .splash-logo {
-            font-size: 5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #00ff88, #00d4ff, #ff6b35, #f7931e);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
-            animation: logoRainbow 2s ease-in-out infinite, logoGlow 2s ease-in-out infinite alternate;
-            transition: all 0.8s ease-in-out;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #e2e8f0;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
         }
        
         .splash-tagline {
-            font-size: 2rem;
-            color: #ffffff;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            color: #64748b;
             margin-bottom: 3rem;
-            animation: fadeInUp 1s ease-out 1s both;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-            transition: all 0.8s ease-in-out;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
        
         .chart-animation {
             width: 300px;
-            height: 150px;
-            margin: 3rem auto;
+            height: 120px;
+            margin: 2rem auto;
             position: relative;
             overflow: hidden;
-            border: 2px solid rgba(0, 255, 136, 0.3);
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 4px;
+            background: rgba(15, 23, 42, 0.5);
         }
        
         .chart-line {
             position: absolute;
             bottom: 0;
-            width: 6px;
-            background: linear-gradient(to top, #00ff88, #00d4ff);
-            animation: chartGrow 1.5s ease-in-out infinite;
-            border-radius: 3px 3px 0 0;
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            width: 4px;
+            background: linear-gradient(to top, #3b82f6, #60a5fa);
+            border-radius: 2px;
         }
        
-        .chart-line:nth-child(1) { left: 30px; height: 80px; animation-delay: 0s; }
-        .chart-line:nth-child(2) { left: 60px; height: 100px; animation-delay: 0.2s; }
-        .chart-line:nth-child(3) { left: 90px; height: 60px; animation-delay: 0.4s; }
-        .chart-line:nth-child(4) { left: 120px; height: 120px; animation-delay: 0.6s; }
-        .chart-line:nth-child(5) { left: 150px; height: 90px; animation-delay: 0.8s; }
-        .chart-line:nth-child(6) { left: 180px; height: 130px; animation-delay: 1s; }
+        .chart-line:nth-child(1) { left: 40px; height: 60px; }
+        .chart-line:nth-child(2) { left: 80px; height: 85px; }
+        .chart-line:nth-child(3) { left: 120px; height: 45px; }
+        .chart-line:nth-child(4) { left: 160px; height: 95px; }
+        .chart-line:nth-child(5) { left: 200px; height: 70px; }
+        .chart-line:nth-child(6) { left: 240px; height: 100px; }
        
         .loading-text {
-            font-size: 1.5rem;
-            color: #00ff88;
-            margin-top: 3rem;
-            animation: pulse 1s ease-in-out infinite;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
-            transition: all 0.8s ease-in-out;
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-top: 2rem;
+            font-weight: 300;
         }
        
         .loading-progress {
-            width: 300px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            margin: 2rem auto;
-            border-radius: 2px;
+            width: 200px;
+            height: 2px;
+            background: rgba(148, 163, 184, 0.2);
+            margin: 1.5rem auto;
+            border-radius: 1px;
             overflow: hidden;
         }
        
         .loading-bar {
             height: 100%;
-            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            background: #3b82f6;
             width: 0%;
-            animation: loadingProgress 8s linear forwards;
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
-        }
-       
-        /* Language transition effects */
-        .language-transitioning {
-            transform: scale(0.95);
-            opacity: 0.7;
-        }
-       
-        @keyframes logoRainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-       
-        @keyframes logoGlow {
-            0% {
-                filter: brightness(1) drop-shadow(0 0 20px rgba(0, 255, 136, 0.5));
-                transform: scale(1);
-            }
-            100% {
-                filter: brightness(1.3) drop-shadow(0 0 40px rgba(0, 255, 136, 0.8));
-                transform: scale(1.05);
-            }
-        }
-       
-        @keyframes splashPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-       
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 0.9;
-                transform: translateY(0);
-            }
-        }
-       
-        @keyframes chartGrow {
-            0%, 100% {
-                transform: scaleY(0.6);
-                opacity: 0.6;
-                box-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
-            }
-            50% {
-                transform: scaleY(1.4);
-                opacity: 1;
-                box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
-            }
-        }
-       
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
+            animation: loadingProgress 6s ease-out forwards;
+            border-radius: 1px;
         }
        
         @keyframes loadingProgress {
@@ -181,8 +111,8 @@
        
         /* LIVE TRADING TICKER */
         .trading-ticker {
-            background: linear-gradient(45deg, #000000, #1a1a1a);
-            border-bottom: 2px solid #00ff88;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
             padding: 0.5rem 0;
             overflow: hidden;
             position: fixed;
@@ -200,38 +130,38 @@
        
         .ticker-item {
             margin-right: 4rem;
-            font-size: 0.9rem;
-            font-weight: bold;
+            font-size: 0.85rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
         }
        
         .ticker-symbol {
-            color: #00d4ff;
+            color: #e2e8f0;
             margin-right: 0.5rem;
         }
        
         .ticker-price {
-            color: #00ff88;
+            color: #3b82f6;
             margin-right: 0.5rem;
         }
        
         .ticker-change {
             margin-left: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
        
         .ticker-change.positive {
-            color: #00ff88;
+            color: #10b981;
         }
        
         .ticker-change.negative {
-            color: #ff6b35;
+            color: #ef4444;
         }
        
         .ticker-status {
             font-size: 0.7rem;
-            color: #00ff88;
+            color: #ef4444;
             margin-left: 0.5rem;
         }
        
@@ -242,11 +172,11 @@
        
         /* MAIN WEBSITE STYLES */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
             line-height: 1.6;
-            padding-top: 40px; /* For ticker */
+            padding-top: 40px;
         }
        
         .main-content {
@@ -259,13 +189,14 @@
         }
        
         .header {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
-            top: 40px; /* Below ticker */
+            top: 40px;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.3);
         }
        
         .nav {
@@ -278,9 +209,10 @@
         }
        
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #00ff88;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            letter-spacing: 1px;
         }
        
         .nav-buttons {
@@ -300,205 +232,189 @@
        
         .lang-switch {
             position: relative;
-            width: 90px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            width: 80px;
+            height: 28px;
+            background: rgba(51, 65, 85, 0.5);
+            border-radius: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid rgba(0, 255, 136, 0.3);
-        }
-       
-        .lang-switch:hover {
-            border-color: rgba(0, 255, 136, 0.6);
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.3);
         }
        
         .lang-slider {
             position: absolute;
             top: 2px;
             left: 2px;
-            width: 26px;
-            height: 24px;
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            border-radius: 12px;
+            width: 24px;
+            height: 22px;
+            background: #3b82f6;
+            border-radius: 11px;
             transition: transform 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.65rem;
-            font-weight: bold;
-            color: #000;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: white;
         }
        
         .lang-switch.spanish .lang-slider {
-            transform: translateX(30px);
+            transform: translateX(26px);
         }
        
         .lang-switch.chinese .lang-slider {
-            transform: translateX(60px);
+            transform: translateX(52px);
         }
        
         .lang-labels {
             display: flex;
             align-items: center;
             gap: 0.2rem;
-            font-size: 0.75rem;
-            font-weight: bold;
+            font-size: 0.7rem;
+            font-weight: 500;
         }
        
         .lang-label {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(148, 163, 184, 0.7);
             transition: color 0.3s ease;
             cursor: pointer;
-            min-width: 24px;
+            min-width: 20px;
             text-align: center;
         }
        
         .lang-label.active {
-            color: #00ff88;
-            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+            color: #3b82f6;
         }
        
         .nav-btn {
-            padding: 0.7rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 6px;
             cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
        
         .premium-btn {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: #3b82f6;
             color: white;
-            animation: navPulse 2s infinite;
+            border: 1px solid #3b82f6;
+        }
+       
+        .premium-btn:hover {
+            background: #2563eb;
+            border-color: #2563eb;
         }
        
         .discord-btn {
-            background: #5865f2;
-            color: white;
+            background: transparent;
+            color: #94a3b8;
+            border: 1px solid #475569;
         }
        
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-       
-        @keyframes navPulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
-        }
-       
-        /* FISHING TAGLINE STYLES */
-        .fishing-tagline {
-            font-size: 1.4rem;
-            color: #00d4ff;
-            margin: 1rem 0 2rem;
-            font-style: italic;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-            letter-spacing: 1px;
-            animation: fishingGlow 3s ease-in-out infinite alternate;
-        }
-       
-        @keyframes fishingGlow {
-            0% {
-                text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-                transform: scale(1);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-                transform: scale(1.02);
-            }
+        .discord-btn:hover {
+            background: #475569;
+            color: #e2e8f0;
         }
 
         .hero {
-            padding: 10rem 2rem 4rem; /* More padding for ticker */
+            padding: 8rem 2rem 4rem;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
         }
        
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
         .core6-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
             padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: bold;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
             margin-bottom: 2rem;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
-            to { box-shadow: 0 0 30px rgba(255, 107, 53, 0.8); }
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            letter-spacing: 1px;
         }
        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin: 1rem 0 2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         /* CORE 6 FACTORS SECTION */
         .core6-factors {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 4rem 2rem;
-            margin: 3rem 0;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 5rem 2rem;
+            margin: 4rem 0;
         }
 
         .factors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .factor-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.6);
             padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(51, 65, 85, 0.5);
             transition: all 0.3s ease;
         }
 
         .factor-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border-color: rgba(0, 255, 136, 0.6);
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.8);
         }
 
-        .factor-icon {
-            font-size: 3rem;
+        .factor-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
         .factor-title {
-            color: #00ff88;
-            font-size: 1.5rem;
-            font-weight: bold;
+            color: #e2e8f0;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+        }
+
+        .factor-description {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* SIGNAL TYPES SECTION */
         .signal-types {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -506,128 +422,154 @@
         .signals-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 3rem;
         }
 
         .signal-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.4);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 8px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 2px solid transparent;
+            border: 1px solid rgba(51, 65, 85, 0.5);
             transition: all 0.3s ease;
         }
 
         .signal-card.regular {
-            border-color: rgba(0, 255, 136, 0.5);
+            border-left: 4px solid #10b981;
         }
 
         .signal-card.institutional {
-            border-color: rgba(0, 212, 255, 0.5);
+            border-left: 4px solid #3b82f6;
         }
 
         .signal-card.advanced {
-            border-color: rgba(186, 85, 211, 0.5);
+            border-left: 4px solid #8b5cf6;
         }
 
         .signal-card.elite {
-            border-color: rgba(255, 20, 147, 0.5);
+            border-left: 4px solid #f59e0b;
         }
 
         .signal-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            background: rgba(30, 41, 59, 0.7);
         }
 
-        .signal-icon {
-            font-size: 4rem;
+        .signal-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+        }
+
+        .signal-card.regular .signal-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .signal-card.institutional .signal-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .signal-card.advanced .signal-badge {
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+        }
+
+        .signal-card.elite .signal-badge {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
         }
 
         .signal-name {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            color: #e2e8f0;
         }
 
-        .signal-card.regular .signal-name {
-            color: #00ff88;
+        .signal-description {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        .signal-card.institutional .signal-name {
-            color: #00d4ff;
-        }
-
-        .signal-card.advanced .signal-name {
-            color: #ba55d3;
-        }
-
-        .signal-card.elite .signal-name {
-            color: #ff1493;
-        }
-
-        /* LIVE MEMBER COUNTER */
+        /* MEMBER COUNTER */
         .member-counter {
-            background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
             margin: 2rem auto;
             max-width: 600px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            animation: memberGlow 3s ease-in-out infinite alternate;
         }
        
         .join-text {
             font-size: 1rem;
-            color: #ffffff;
-            opacity: 0.9;
-        }
-       
-        @keyframes memberGlow {
-            0% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); }
-            100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.6); }
+            color: #94a3b8;
+            font-weight: 400;
         }
 
         .premium-banner {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            padding: 1rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            animation: glow 2s ease-in-out infinite alternate;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
         }
 
         .premium-banner h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        .premium-banner p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            color: #000;
-            padding: 1rem 2rem;
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 2rem;
             border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 1rem;
+            margin: 0.5rem;
             transition: all 0.3s ease;
         }
        
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 1px solid #475569;
+            color: #94a3b8;
+        }
+
+        .cta-button.secondary:hover {
+            background: #475569;
+            color: #e2e8f0;
         }
 
         /* FEATURES SECTION */
         .features {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -636,7 +578,8 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #00ff88;
+            color: #e2e8f0;
+            font-weight: 600;
         }
        
         .features-grid {
@@ -646,28 +589,48 @@
         }
        
         .feature-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.4);
             padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            border: 1px solid rgba(51, 65, 85, 0.5);
             transition: all 0.3s ease;
         }
        
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.7);
         }
        
         .feature-icon {
-            font-size: 3rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+            font-size: 1.2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .stats {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 3rem 2rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 4rem 2rem;
             text-align: center;
         }
        
@@ -681,82 +644,89 @@
        
         .stat-item h3 {
             font-size: 2.5rem;
-            color: #00ff88;
+            color: #3b82f6;
             margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            font-weight: 400;
         }
 
         .footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 2rem;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 3rem 2rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(51, 65, 85, 0.3);
+        }
+
+        .footer p {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #3b82f6;
         }
        
         .disclaimer {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid #ffc107;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 6px;
             margin: 2rem 0;
-            font-size: 0.9rem;
-            color: #ffc107;
+            font-size: 0.85rem;
+            color: #fbbf24;
         }
 
         @media (max-width: 768px) {
             .splash-logo {
-                font-size: 3rem;
-            }
-           
-            .splash-tagline {
-                font-size: 1.5rem;
-            }
-           
-            .chart-animation {
-                width: 250px;
-                height: 120px;
+                font-size: 2.5rem;
             }
            
             .hero h1 {
                 font-size: 2.5rem;
             }
            
-            .fishing-tagline {
-                font-size: 1.1rem;
-            }
-           
             .nav {
                 flex-direction: column;
                 gap: 1rem;
+                padding: 1rem;
             }
            
             .nav-buttons {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 0.5rem;
             }
            
-            .language-toggle {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
-            }
-           
-            .lang-switch {
-                width: 80px;
-            }
-           
-            .lang-labels {
-                gap: 0.1rem;
-                font-size: 0.7rem;
-            }
-           
             .hero {
-                padding: 8rem 1rem 2rem;
-            }
-           
-            .member-counter {
-                margin: 1rem;
-                padding: 1rem;
+                padding: 6rem 1rem 3rem;
             }
            
             .factors-grid {
@@ -764,6 +734,10 @@
             }
 
             .signals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -777,37 +751,37 @@
                 <span class="ticker-symbol">BTC/USD</span>
                 <span class="ticker-price" id="btcPrice">$107,565</span>
                 <span class="ticker-change negative" id="btcChange">-0.22%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">ETH/USD</span>
                 <span class="ticker-price" id="ethPrice">$2,519.6</span>
                 <span class="ticker-change negative" id="ethChange">-0.45%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">SPY</span>
                 <span class="ticker-price" id="spyPrice">$579.11</span>
                 <span class="ticker-change negative" id="spyChange">-0.68%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">TSLA</span>
                 <span class="ticker-price" id="tslaPrice">$339.39</span>
                 <span class="ticker-change positive" id="tslaChange">+1.2%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">AAPL</span>
                 <span class="ticker-price" id="aaplPrice">$195.34</span>
                 <span class="ticker-change positive" id="aaplChange">+0.5%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">NVDA</span>
                 <span class="ticker-price" id="nvdaPrice">$131.31</span>
                 <span class="ticker-change negative" id="nvdaChange">-0.8%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
         </div>
     </div>
@@ -816,9 +790,9 @@
     <div class="splash-screen" id="splash">
         <div class="splash-content">
             <div class="splash-logo"
-                 data-en="📈 CORE 6 TRADING SYSTEM"
-                 data-es="📈 SISTEMA CORE 6 TRADING"
-                 data-cn="📈 CORE 6交易系统">📈 CORE 6 TRADING SYSTEM</div>
+                 data-en="CORE 6 TRADING SYSTEM"
+                 data-es="SISTEMA CORE 6 TRADING"
+                 data-cn="CORE 6交易系统">CORE 6 TRADING SYSTEM</div>
             <div class="splash-tagline"
                  data-en="Professional Institutional Analysis"
                  data-es="Análisis Institucional Profesional"
@@ -832,9 +806,9 @@
                 <div class="chart-line"></div>
             </div>
             <div class="loading-text"
-                 data-en="Loading Core 6 System..."
-                 data-es="Cargando Sistema Core 6..."
-                 data-cn="加载Core 6系统...">Loading Core 6 System...</div>
+                 data-en="Loading System..."
+                 data-es="Cargando Sistema..."
+                 data-cn="加载系统...">Loading System...</div>
             <div class="loading-progress">
                 <div class="loading-bar"></div>
             </div>
@@ -845,7 +819,9 @@
     <div class="main-content" id="mainContent">
         <header class="header">
             <nav class="nav">
-                <div class="logo">📈 <span data-en="The Chart Shark" data-es="El Tiburón del Gráfico" data-cn="图表鲨鱼">The Chart Shark</span></div>
+                <div class="logo">
+                    <span data-en="The Chart Shark" data-es="El Tiburón del Gráfico" data-cn="图表鲨鱼">The Chart Shark</span>
+                </div>
                 <div class="nav-buttons">
                     <div class="language-toggle">
                         <div class="lang-labels">
@@ -857,31 +833,32 @@
                             <span class="lang-label" id="cnLabel">中</span>
                         </div>
                     </div>
-                    <a href="premium.html" class="nav-btn premium-btn" data-en="Get Core 6 Access" data-es="Obtener Acceso Core 6" data-cn="获取Core 6访问">Get Core 6 Access</a>
-                    <a href="https://discord.gg/AQ2S8KxDS5" class="nav-btn discord-btn" data-en="Join Discord" data-es="Únete a Discord" data-cn="加入Discord">Join Discord</a>
+                    <a href="premium.html" class="nav-btn premium-btn" data-en="Get Access" data-es="Obtener Acceso" data-cn="获取访问">Get Access</a>
+                    <a href="https://discord.gg/AQ2S8KxDS5" class="nav-btn discord-btn" data-en="Discord" data-es="Discord" data-cn="Discord">Discord</a>
                 </div>
             </nav>
         </header>
 
         <section class="hero">
-            <div class="core6-badge" data-en="🔥 CORE 6 TRADING SYSTEM 🔥" data-es="🔥 SISTEMA CORE 6 TRADING 🔥" data-cn="🔥 CORE 6交易系统 🔥">🔥 CORE 6 TRADING SYSTEM 🔥</div>
-            <h1 data-en="Master Institutional Trading" data-es="Domina el Trading Institucional" data-cn="掌握机构交易">Master Institutional Trading</h1>
-            <div class="fishing-tagline" data-en='"TRADE LIKE THE BIG MONEY WITH 6 CRITICAL FACTORS" 🎯' data-es='"OPERA COMO EL DINERO GRANDE CON 6 FACTORES CRÍTICOS" 🎯' data-cn='"用6个关键因素像大资金一样交易" 🎯'>
-                "TRADE LIKE THE BIG MONEY WITH 6 CRITICAL FACTORS" 🎯
+            <div class="core6-badge" data-en="CORE 6 TRADING SYSTEM" data-es="SISTEMA CORE 6 TRADING" data-cn="CORE 6交易系统">CORE 6 TRADING SYSTEM</div>
+            <h1 data-en="Institutional-Grade Trading Analysis" data-es="Análisis de Trading de Grado Institucional" data-cn="机构级交易分析">Institutional-Grade Trading Analysis</h1>
+            <div class="hero-subtitle" data-en="Advanced multi-factor analysis system used by professional traders for high-probability market entries" data-es="Sistema de análisis multifactor avanzado utilizado por traders profesionales para entradas de mercado de alta probabilidad" data-cn="专业交易者用于高概率市场入场的高级多因子分析系统">
+                Advanced multi-factor analysis system used by professional traders for high-probability market entries
             </div>
            
-            <!-- LIVE MEMBER COUNTER -->
+            <!-- MEMBER COUNTER -->
             <div class="member-counter">
-                <div class="join-text" data-en="Join traders using our proprietary Core 6 system for institutional-level analysis" data-es="Únete a traders usando nuestro sistema Core 6 propietario para análisis de nivel institucional" data-cn="加入使用我们专有Core 6系统进行机构级分析的交易者">Join traders using our proprietary Core 6 system for institutional-level analysis</div>
+                <div class="join-text" data-en="Join professionals using our proprietary Core 6 system for institutional-level market analysis" data-es="Únete a profesionales usando nuestro sistema Core 6 propietario para análisis de mercado de nivel institucional" data-cn="加入使用我们专有Core 6系统进行机构级市场分析的专业人士">Join professionals using our proprietary Core 6 system for institutional-level market analysis</div>
             </div>
            
             <div class="premium-banner">
-                <h3 data-en="🚀 GET CORE 6 INDICATOR ACCESS 🚀" data-es="🚀 OBTÉN ACCESO AL INDICADOR CORE 6 🚀" data-cn="🚀 获取CORE 6指标访问 🚀">🚀 GET CORE 6 INDICATOR ACCESS 🚀</h3>
-                <p data-en="Professional TradingView indicator with complete training system - learn to trade like institutions" data-es="Indicador profesional de TradingView con sistema de entrenamiento completo - aprende a operar como las instituciones" data-cn="专业TradingView指标与完整培训系统-学会像机构一样交易">Professional TradingView indicator with complete training system - learn to trade like institutions</p>
-                <a href="premium.html" class="cta-button" data-en="Get Core 6 System" data-es="Obtener Sistema Core 6" data-cn="获取Core 6系统">Get Core 6 System</a>
+                <h3 data-en="Professional TradingView Integration" data-es="Integración Profesional de TradingView" data-cn="专业TradingView集成">Professional TradingView Integration</h3>
+                <p data-en="Complete trading system with comprehensive training materials and institutional-grade market analysis tools" data-es="Sistema de trading completo con materiales de entrenamiento integral y herramientas de análisis de mercado de grado institucional" data-cn="完整的交易系统，包含全面的培训材料和机构级市场分析工具">Complete trading system with comprehensive training materials and institutional-grade market analysis tools</p>
+                <a href="premium.html" class="cta-button" data-en="Access Core 6 System" data-es="Acceder al Sistema Core 6" data-cn="访问Core 6系统">Access Core 6 System</a>
             </div>
            
-            <a href="premium.html" class="cta-button" data-en="🎯 Access Premium Core 6" data-es="🎯 Acceder a Core 6 Premium" data-cn="🎯 访问高级Core 6">🎯 Access Premium Core 6</a>
+            <a href="premium.html" class="cta-button" data-en="View Premium Plans" data-es="Ver Planes Premium" data-cn="查看高级方案">View Premium Plans</a>
+            <a href="https://discord.gg/AQ2S8KxDS5" class="cta-button secondary" data-en="Join Community" data-es="Unirse a la Comunidad" data-cn="加入社区">Join Community</a>
            
             <div class="disclaimer">
                 <strong data-en="Risk Disclaimer:" data-es="Aviso de Riesgo:" data-cn="风险提示:">Risk Disclaimer:</strong> <span data-en="Trading involves substantial risk and is not suitable for all investors. The Core 6 system is for educational purposes and does not guarantee profits." data-es="El trading implica un riesgo sustancial y no es adecuado para todos los inversores. El sistema Core 6 es para fines educativos y no garantiza ganancias." data-cn="交易涉及重大风险，不适合所有投资者。Core 6系统仅供教育目的，不保证利润。">Trading involves substantial risk and is not suitable for all investors. The Core 6 system is for educational purposes and does not guarantee profits.</span>
@@ -890,72 +867,74 @@
 
         <!-- CORE 6 FACTORS EXPLANATION -->
         <section class="core6-factors">
-            <h2 style="text-align: center; color: #00ff88; font-size: 2.5rem; margin-bottom: 2rem;" data-en="The 6 Critical Trading Factors" data-es="Los 6 Factores Críticos de Trading" data-cn="6个关键交易因素">The 6 Critical Trading Factors</h2>
+            <div class="section-title" data-en="Six Critical Market Factors" data-es="Seis Factores Críticos del Mercado" data-cn="六个关键市场因素">Six Critical Market Factors</div>
+            <div class="section-subtitle" data-en="Comprehensive analysis framework for institutional-quality trade identification" data-es="Marco de análisis integral para identificación de operaciones de calidad institucional" data-cn="用于机构质量交易识别的综合分析框架">Comprehensive analysis framework for institutional-quality trade identification</div>
             <div class="factors-grid">
                 <div class="factor-card">
-                    <div class="factor-icon">⚡</div>
-                    <div class="factor-title" data-en="1. Pulse" data-es="1. Pulso" data-cn="1. 脉冲">1. Pulse</div>
-                    <p data-en="Momentum detection system that identifies accelerating and decelerating market movements with precision timing." data-es="Sistema de detección de momentum que identifica movimientos acelerados y desacelerados del mercado con timing preciso." data-cn="动量检测系统，精确识别市场加速和减速运动的时机。">Momentum detection system that identifies accelerating and decelerating market movements with precision timing.</p>
+                    <div class="factor-number">1</div>
+                    <div class="factor-title" data-en="Pulse Detection" data-es="Detección de Pulso" data-cn="脉冲检测">Pulse Detection</div>
+                    <div class="factor-description" data-en="Advanced momentum analysis system that identifies market acceleration and deceleration patterns with precision timing for optimal entry points." data-es="Sistema de análisis de momentum avanzado que identifica patrones de aceleración y desaceleración del mercado con timing preciso para puntos de entrada óptimos." data-cn="高级动量分析系统，精确识别市场加速和减速模式，为最佳入场点提供精确时机。">Advanced momentum analysis system that identifies market acceleration and deceleration patterns with precision timing for optimal entry points.</div>
                 </div>
                 
                 <div class="factor-card">
-                    <div class="factor-icon">📈</div>
-                    <div class="factor-title" data-en="2. Trend/Bias" data-es="2. Tendencia/Sesgo" data-cn="2. 趋势/偏向">2. Trend/Bias</div>
-                    <p data-en="Multi-timeframe alignment analysis ensuring you trade with the institutional flow, not against it." data-es="Análisis de alineación multi-timeframe asegurando que operes con el flujo institucional, no en su contra." data-cn="多时间框架对齐分析，确保您与机构流动交易，而不是逆势而为。">Multi-timeframe alignment analysis ensuring you trade with the institutional flow, not against it.</p>
+                    <div class="factor-number">2</div>
+                    <div class="factor-title" data-en="Trend Alignment" data-es="Alineación de Tendencia" data-cn="趋势对齐">Trend Alignment</div>
+                    <div class="factor-description" data-en="Multi-timeframe bias confirmation ensuring trades align with institutional flow direction across various market cycles." data-es="Confirmación de sesgo de múltiples marcos temporales asegurando que las operaciones se alineen con la dirección del flujo institucional a través de varios ciclos de mercado." data-cn="多时间框架偏向确认，确保交易与各种市场周期中的机构流动方向一致。">Multi-timeframe bias confirmation ensuring trades align with institutional flow direction across various market cycles.</div>
                 </div>
                 
                 <div class="factor-card">
-                    <div class="factor-icon">🚨</div>
-                    <div class="factor-title" data-en="3. Trap Risk" data-es="3. Riesgo de Trampa" data-cn="3. 陷阱风险">3. Trap Risk</div>
-                    <p data-en="Advanced divergence detection that warns of potential market traps and false breakouts before they happen." data-es="Detección avanzada de divergencias que advierte sobre trampas potenciales del mercado y breakouts falsos antes de que ocurran." data-cn="高级背离检测，在市场陷阱和虚假突破发生之前发出警告。">Advanced divergence detection that warns of potential market traps and false breakouts before they happen.</p>
+                    <div class="factor-number">3</div>
+                    <div class="factor-title" data-en="Risk Assessment" data-es="Evaluación de Riesgo" data-cn="风险评估">Risk Assessment</div>
+                    <div class="factor-description" data-en="Sophisticated divergence analysis that identifies potential market traps and false breakout scenarios before they develop." data-es="Análisis de divergencia sofisticado que identifica trampas potenciales del mercado y escenarios de breakout falsos antes de que se desarrollen." data-cn="复杂的背离分析，在市场陷阱和虚假突破场景发展之前识别它们。">Sophisticated divergence analysis that identifies potential market traps and false breakout scenarios before they develop.</div>
                 </div>
                 
                 <div class="factor-card">
-                    <div class="factor-icon">🎯</div>
-                    <div class="factor-title" data-en="4. Order Block Proximity" data-es="4. Proximidad de Bloque de Órdenes" data-cn="4. 订单块接近度">4. Order Block Proximity</div>
-                    <p data-en="Identifies institutional order blocks and liquidity zones where big money is likely to enter or exit positions." data-es="Identifica bloques de órdenes institucionales y zonas de liquidez donde es probable que el dinero grande entre o salga de posiciones." data-cn="识别机构订单块和流动性区域，大资金可能在此进入或退出头寸。">Identifies institutional order blocks and liquidity zones where big money is likely to enter or exit positions.</p>
+                    <div class="factor-number">4</div>
+                    <div class="factor-title" data-en="Liquidity Zones" data-es="Zonas de Liquidez" data-cn="流动性区域">Liquidity Zones</div>
+                    <div class="factor-description" data-en="Institutional order block identification system that pinpoints areas where large capital is likely to enter or exit positions." data-es="Sistema de identificación de bloques de órdenes institucionales que identifica áreas donde es probable que el capital grande entre o salga de posiciones." data-cn="机构订单块识别系统，精确定位大资本可能进入或退出头寸的区域。">Institutional order block identification system that pinpoints areas where large capital is likely to enter or exit positions.</div>
                 </div>
                 
                 <div class="factor-card">
-                    <div class="factor-icon">🚀</div>
-                    <div class="factor-title" data-en="5. Momentum Rising" data-es="5. Momentum Ascendente" data-cn="5. 动量上升">5. Momentum Rising</div>
-                    <p data-en="Combines RSI and MACD signals to confirm strengthening momentum before major price movements occur." data-es="Combina señales RSI y MACD para confirmar el fortalecimiento del momentum antes de que ocurran movimientos importantes de precio." data-cn="结合RSI和MACD信号，在重大价格变动发生之前确认动量增强。">Combines RSI and MACD signals to confirm strengthening momentum before major price movements occur.</p>
+                    <div class="factor-number">5</div>
+                    <div class="factor-title" data-en="Momentum Confluence" data-es="Confluencia de Momentum" data-cn="动量汇合">Momentum Confluence</div>
+                    <div class="factor-description" data-en="Synchronized RSI and MACD signal analysis that confirms strengthening market momentum before significant price movements occur." data-es="Análisis sincronizado de señales RSI y MACD que confirma el fortalecimiento del momentum del mercado antes de que ocurran movimientos significativos de precio." data-cn="同步RSI和MACD信号分析，在重大价格变动发生之前确认市场动量增强。">Synchronized RSI and MACD signal analysis that confirms strengthening market momentum before significant price movements occur.</div>
                 </div>
                 
                 <div class="factor-card">
-                    <div class="factor-icon">💪</div>
-                    <div class="factor-title" data-en="6. Strength Grade" data-es="6. Grado de Fuerza" data-cn="6. 强度等级">6. Strength Grade</div>
-                    <p data-en="Comprehensive scoring system (MAX, Strong, Good, Weak) that grades overall market strength and conviction." data-es="Sistema de puntuación integral (MAX, Fuerte, Bueno, Débil) que califica la fuerza general del mercado y la convicción." data-cn="综合评分系统（MAX、强、好、弱），评估整体市场强度和信念。">Comprehensive scoring system (MAX, Strong, Good, Weak) that grades overall market strength and conviction.</p>
+                    <div class="factor-number">6</div>
+                    <div class="factor-title" data-en="Market Strength" data-es="Fuerza del Mercado" data-cn="市场强度">Market Strength</div>
+                    <div class="factor-description" data-en="Comprehensive market conviction scoring system that grades overall market strength from weak to maximum across multiple indicators." data-es="Sistema integral de puntuación de convicción del mercado que califica la fuerza general del mercado de débil a máximo a través de múltiples indicadores." data-cn="综合市场信念评分系统，通过多个指标将整体市场强度从弱到最大进行评级。">Comprehensive market conviction scoring system that grades overall market strength from weak to maximum across multiple indicators.</div>
                 </div>
             </div>
         </section>
 
         <!-- SIGNAL TYPES SECTION -->
         <section class="signal-types">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #00d4ff; margin-bottom: 2rem;" data-en="4 Types of Core 6 Signals" data-es="4 Tipos de Señales Core 6" data-cn="4种Core 6信号类型">4 Types of Core 6 Signals</h2>
+            <div class="section-title" data-en="Signal Classification System" data-es="Sistema de Clasificación de Señales" data-cn="信号分类系统">Signal Classification System</div>
+            <div class="section-subtitle" data-en="Four distinct signal types based on market conditions and institutional activity levels" data-es="Cuatro tipos distintos de señales basados en condiciones de mercado y niveles de actividad institucional" data-cn="基于市场条件和机构活动水平的四种不同信号类型">Four distinct signal types based on market conditions and institutional activity levels</div>
             <div class="signals-grid">
                 <div class="signal-card regular">
-                    <div class="signal-icon">🟢</div>
-                    <div class="signal-name" data-en="Regular Signals" data-es="Señales Regulares" data-cn="常规信号">Regular Signals</div>
-                    <p data-en="Standard high-probability setups when 4+ Core 6 factors align for solid trade opportunities." data-es="Configuraciones estándar de alta probabilidad cuando 4+ factores Core 6 se alinean para oportunidades sólidas de trading." data-cn="当4个以上Core 6因素对齐时的标准高概率设置，提供稳固的交易机会。">Standard high-probability setups when 4+ Core 6 factors align for solid trade opportunities.</p>
+                    <div class="signal-badge">REGULAR</div>
+                    <div class="signal-name" data-en="Standard Signals" data-es="Señales Estándar" data-cn="标准信号">Standard Signals</div>
+                    <div class="signal-description" data-en="High-probability setups when four or more Core 6 factors align, providing solid trading opportunities with clear risk-reward parameters." data-es="Configuraciones de alta probabilidad cuando cuatro o más factores Core 6 se alinean, proporcionando oportunidades de trading sólidas con parámetros claros de riesgo-recompensa." data-cn="当四个或更多Core 6因素对齐时的高概率设置，提供具有明确风险回报参数的稳固交易机会。">High-probability setups when four or more Core 6 factors align, providing solid trading opportunities with clear risk-reward parameters.</div>
                 </div>
                 
                 <div class="signal-card institutional">
-                    <div class="signal-icon">🔵</div>
+                    <div class="signal-badge">INSTITUTIONAL</div>
                     <div class="signal-name" data-en="Institutional Signals" data-es="Señales Institucionales" data-cn="机构信号">Institutional Signals</div>
-                    <p data-en="Big money moves detected through volume analysis, order flow, and institutional footprint tracking." data-es="Movimientos de dinero grande detectados a través de análisis de volumen, flujo de órdenes y seguimiento de huella institucional." data-cn="通过成交量分析、订单流和机构足迹跟踪检测大资金移动。">Big money moves detected through volume analysis, order flow, and institutional footprint tracking.</p>
+                    <div class="signal-description" data-en="Large capital movements detected through advanced volume analysis, order flow examination, and institutional footprint tracking algorithms." data-es="Movimientos de capital grande detectados a través de análisis de volumen avanzado, examen de flujo de órdenes y algoritmos de seguimiento de huella institucional." data-cn="通过高级成交量分析、订单流检查和机构足迹跟踪算法检测到的大资本移动。">Large capital movements detected through advanced volume analysis, order flow examination, and institutional footprint tracking algorithms.</div>
                 </div>
                 
                 <div class="signal-card advanced">
-                    <div class="signal-icon">🟣</div>
-                    <div class="signal-name" data-en="Advanced Signals" data-es="Señales Avanzadas" data-cn="高级信号">Advanced Signals</div>
-                    <p data-en="Enhanced divergence patterns including triple divergence and hidden continuation signals." data-es="Patrones de divergencia mejorados incluyendo triple divergencia y señales de continuación ocultas." data-cn="增强的背离模式，包括三重背离和隐藏的持续信号。">Enhanced divergence patterns including triple divergence and hidden continuation signals.</p>
+                    <div class="signal-badge">ADVANCED</div>
+                    <div class="signal-name" data-en="Advanced Patterns" data-es="Patrones Avanzados" data-cn="高级模式">Advanced Patterns</div>
+                    <div class="signal-description" data-en="Complex divergence formations including triple divergence patterns and hidden continuation signals that indicate strong directional bias." data-es="Formaciones de divergencia complejas incluyendo patrones de triple divergencia y señales de continuación ocultas que indican sesgo direccional fuerte." data-cn="复杂的背离形态，包括三重背离模式和隐藏的持续信号，表明强烈的方向性偏向。">Complex divergence formations including triple divergence patterns and hidden continuation signals that indicate strong directional bias.</div>
                 </div>
                 
                 <div class="signal-card elite">
-                    <div class="signal-icon">⭐</div>
-                    <div class="signal-name" data-en="Elite Signals" data-es="Señales Elite" data-cn="精英信号">Elite Signals</div>
-                    <p data-en="Rare, highest-quality setups with potential for 100+ point moves. Maximum institutional backing required." data-es="Configuraciones raras de la más alta calidad con potencial para movimientos de 100+ puntos. Se requiere respaldo institucional máximo." data-cn="稀有的最高质量设置，具有100+点移动的潜力。需要最大的机构支持。">Rare, highest-quality setups with potential for 100+ point moves. Maximum institutional backing required.</p>
+                    <div class="signal-badge">ELITE</div>
+                    <div class="signal-name" data-en="Elite Setups" data-es="Configuraciones Elite" data-cn="精英设置">Elite Setups</div>
+                    <div class="signal-description" data-en="Rare, highest-quality configurations with significant move potential exceeding 100 points, requiring maximum institutional backing and perfect factor alignment." data-es="Configuraciones raras de la más alta calidad con potencial de movimiento significativo que excede 100 puntos, requiriendo respaldo institucional máximo y alineación perfecta de factores." data-cn="稀有的最高质量配置，具有超过100点的重大移动潜力，需要最大的机构支持和完美的因子对齐。">Rare, highest-quality configurations with significant move potential exceeding 100 points, requiring maximum institutional backing and perfect factor alignment.</div>
                 </div>
             </div>
         </section>
@@ -972,7 +951,7 @@
                 </div>
                 <div class="stat-item">
                     <h3>24/7</h3>
-                    <p data-en="Market Scanning" data-es="Escaneo de Mercado" data-cn="市场扫描">Market Scanning</p>
+                    <p data-en="Analysis" data-es="Análisis" data-cn="分析">Analysis</p>
                 </div>
                 <div class="stat-item">
                     <h3>100+</h3>
@@ -982,43 +961,43 @@
         </section>
 
         <section class="features">
-            <h2 data-en="What You Get with Core 6" data-es="Lo Que Obtienes con Core 6" data-cn="使用Core 6您将获得什么">What You Get with Core 6</h2>
+            <h2 data-en="System Components" data-es="Componentes del Sistema" data-cn="系统组件">System Components</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon">📊</div>
                     <h3 data-en="Core 6 Indicator" data-es="Indicador Core 6" data-cn="Core 6指标">Core 6 Indicator</h3>
-                    <p data-en="Professional TradingView indicator that analyzes all 6 factors in real-time with institutional-grade precision." data-es="Indicador profesional de TradingView que analiza los 6 factores en tiempo real con precisión de grado institucional." data-cn="专业TradingView指标，以机构级精度实时分析所有6个因素。">Professional TradingView indicator that analyzes all 6 factors in real-time with institutional-grade precision.</p>
+                    <p data-en="Professional TradingView indicator providing real-time analysis of all six factors with institutional-grade precision and customizable parameters." data-es="Indicador profesional de TradingView que proporciona análisis en tiempo real de los seis factores con precisión de grado institucional y parámetros personalizables." data-cn="专业TradingView指标，以机构级精度和可定制参数实时分析所有六个因素。">Professional TradingView indicator providing real-time analysis of all six factors with institutional-grade precision and customizable parameters.</p>
                     <a href="premium.html" class="cta-button" data-en="Get Indicator" data-es="Obtener Indicador" data-cn="获取指标">Get Indicator</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3 data-en="Core 6 Training" data-es="Entrenamiento Core 6" data-cn="Core 6培训">Core 6 Training</h3>
-                    <p data-en="Complete video tutorials and guides teaching you how to master all 6 factors and signal types." data-es="Tutoriales en video completos y guías que te enseñan cómo dominar los 6 factores y tipos de señales." data-cn="完整的视频教程和指南，教您如何掌握所有6个因素和信号类型。">Complete video tutorials and guides teaching you how to master all 6 factors and signal types.</p>
+                    <div class="feature-icon">🎓</div>
+                    <h3 data-en="Training Materials" data-es="Materiales de Entrenamiento" data-cn="培训材料">Training Materials</h3>
+                    <p data-en="Comprehensive video tutorials and documentation covering all aspects of the Core 6 system implementation and optimization strategies." data-es="Tutoriales en video integrales y documentación que cubren todos los aspectos de la implementación del sistema Core 6 y estrategias de optimización." data-cn="全面的视频教程和文档，涵盖Core 6系统实施和优化策略的所有方面。">Comprehensive video tutorials and documentation covering all aspects of the Core 6 system implementation and optimization strategies.</p>
                     <a href="premium.html" class="cta-button" data-en="Learn System" data-es="Aprender Sistema" data-cn="学习系统">Learn System</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3 data-en="Hedge Fund Analysis" data-es="Análisis de Hedge Fund" data-cn="对冲基金分析">Hedge Fund Analysis</h3>
-                    <p data-en="Advanced features including Kelly Criterion position sizing, liquidity analysis, and auction market theory." data-es="Características avanzadas incluyendo dimensionamiento de posición Kelly Criterion, análisis de liquidez y teoría de mercado de subasta." data-cn="高级功能，包括凯利准则头寸大小调整、流动性分析和拍卖市场理论。">Advanced features including Kelly Criterion position sizing, liquidity analysis, and auction market theory.</p>
+                    <div class="feature-icon">⚙️</div>
+                    <h3 data-en="Advanced Analytics" data-es="Análisis Avanzado" data-cn="高级分析">Advanced Analytics</h3>
+                    <p data-en="Hedge fund-level features including Kelly Criterion position sizing, liquidity analysis, and auction market theory implementation." data-es="Características de nivel de hedge fund incluyendo dimensionamiento de posición Kelly Criterion, análisis de liquidez e implementación de teoría de mercado de subasta." data-cn="对冲基金级功能，包括凯利准则头寸大小调整、流动性分析和拍卖市场理论实施。">Hedge fund-level features including Kelly Criterion position sizing, liquidity analysis, and auction market theory implementation.</p>
                     <a href="premium.html" class="cta-button" data-en="Learn More" data-es="Aprender Más" data-cn="了解更多">Learn More</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💎</div>
-                    <h3 data-en="Advanced Strategies" data-es="Estrategias Avanzadas" data-cn="高级策略">Advanced Strategies</h3>
-                    <p data-en="Learn to identify Elite setups with 100+ point potential using advanced Core 6 configurations." data-es="Aprende a identificar configuraciones Elite con potencial de 100+ puntos usando configuraciones avanzadas de Core 6." data-cn="学习使用高级Core 6配置识别具有100+点潜力的精英设置。">Learn to identify Elite setups with 100+ point potential using advanced Core 6 configurations.</p>
-                    <a href="premium.html" class="cta-button" data-en="Master Elite Setups" data-es="Dominar Configuraciones Elite" data-cn="掌握精英设置">Master Elite Setups</a>
+                    <div class="feature-icon">🔍</div>
+                    <h3 data-en="Elite Identification" data-es="Identificación Elite" data-cn="精英识别">Elite Identification</h3>
+                    <p data-en="Advanced pattern recognition training for identifying elite setups with significant move potential using sophisticated Core 6 configurations." data-es="Entrenamiento de reconocimiento de patrones avanzado para identificar configuraciones elite con potencial de movimiento significativo usando configuraciones sofisticadas de Core 6." data-cn="使用复杂的Core 6配置识别具有重大移动潜力的精英设置的高级模式识别训练。">Advanced pattern recognition training for identifying elite setups with significant move potential using sophisticated Core 6 configurations.</p>
+                    <a href="premium.html" class="cta-button" data-en="Master Patterns" data-es="Dominar Patrones" data-cn="掌握模式">Master Patterns</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3 data-en="1-on-1 Core 6 Coaching" data-es="Coaching Core 6 1-a-1" data-cn="一对一Core 6指导">1-on-1 Core 6 Coaching</h3>
-                    <p data-en="Personal training sessions to master the Core 6 system and develop your institutional trading edge." data-es="Sesiones de entrenamiento personal para dominar el sistema Core 6 y desarrollar tu ventaja de trading institucional." data-cn="个人培训课程，掌握Core 6系统并培养您的机构交易优势。">Personal training sessions to master the Core 6 system and develop your institutional trading edge.</p>
+                    <div class="feature-icon">👨‍💼</div>
+                    <h3 data-en="Personal Coaching" data-es="Coaching Personal" data-cn="个人指导">Personal Coaching</h3>
+                    <p data-en="One-on-one training sessions focused on mastering the Core 6 methodology and developing institutional-level trading expertise." data-es="Sesiones de entrenamiento uno a uno enfocadas en dominar la metodología Core 6 y desarrollar experiencia de trading de nivel institucional." data-cn="专注于掌握Core 6方法论和发展机构级交易专业知识的一对一培训课程。">One-on-one training sessions focused on mastering the Core 6 methodology and developing institutional-level trading expertise.</p>
                     <a href="premium.html" class="cta-button" data-en="Book Session" data-es="Reservar Sesión" data-cn="预约会话">Book Session</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 data-en="Divergence Trading Mode" data-es="Modo de Trading de Divergencia" data-cn="背离交易模式">Divergence Trading Mode</h3>
-                    <p data-en="Specialized parameters and risk management designed specifically for divergence and mean reversion strategies." data-es="Parámetros especializados y gestión de riesgo diseñados específicamente para estrategias de divergencia y reversión a la media." data-cn="专门为背离和均值回归策略设计的专业参数和风险管理。">Specialized parameters and risk management designed specifically for divergence and mean reversion strategies.</p>
-                    <a href="premium.html" class="cta-button" data-en="Activate Mode" data-es="Activar Modo" data-cn="激活模式">Activate Mode</a>
+                    <div class="feature-icon">📈</div>
+                    <h3 data-en="Specialized Modes" data-es="Modos Especializados" data-cn="专业模式">Specialized Modes</h3>
+                    <p data-en="Optimized parameters and risk management protocols specifically designed for divergence trading and mean reversion strategies." data-es="Parámetros optimizados y protocolos de gestión de riesgo específicamente diseñados para trading de divergencia y estrategias de reversión a la media." data-cn="专门为背离交易和均值回归策略设计的优化参数和风险管理协议。">Optimized parameters and risk management protocols specifically designed for divergence trading and mean reversion strategies.</p>
+                    <a href="premium.html" class="cta-button" data-en="Activate Modes" data-es="Activar Modos" data-cn="激活模式">Activate Modes</a>
                 </div>
             </div>
         </section>
@@ -1026,9 +1005,9 @@
         <footer class="footer">
             <p data-en="© 2025 The Chart Shark - Core 6 Trading System. All rights reserved." data-es="© 2025 El Tiburón del Gráfico - Sistema Core 6 Trading. Todos los derechos reservados." data-cn="© 2025 图表鲨鱼 - Core 6交易系统。保留所有权利。">&copy; 2025 The Chart Shark - Core 6 Trading System. All rights reserved.</p>
             <p data-en="Professional institutional trading education and analysis" data-es="Educación y análisis de trading institucional profesional" data-cn="专业机构交易教育和分析">Professional institutional trading education and analysis</p>
-            <div style="margin-top: 1rem;">
-                <a href="premium.html" style="color: #00ff88; text-decoration: none; margin: 0 1rem;" data-en="Core 6 Premium" data-es="Core 6 Premium" data-cn="Core 6高级">Core 6 Premium</a>
-                <a href="https://discord.gg/AQ2S8KxDS5" style="color: #00d4ff; text-decoration: none; margin: 0 1rem;">Discord</a>
+            <div style="margin-top: 1.5rem;">
+                <a href="premium.html" data-en="Premium Access" data-es="Acceso Premium" data-cn="高级访问">Premium Access</a>
+                <a href="https://discord.gg/AQ2S8KxDS5">Discord Community</a>
             </div>
         </footer>
     </div>
@@ -1046,30 +1025,18 @@
             const languages = ['en', 'es', 'cn'];
             let currentIndex = 0;
            
-            // Cycle through languages every 2.5 seconds during splash
+            // Cycle through languages every 3 seconds during splash
             splashInterval = setInterval(() => {
                 currentIndex = (currentIndex + 1) % languages.length;
                 const lang = languages[currentIndex];
                 splashLanguage = lang;
                
-                // Add transition effect
-                splashLogo.classList.add('language-transitioning');
-                splashTagline.classList.add('language-transitioning');
-                loadingText.classList.add('language-transitioning');
+                // Update text content
+                splashLogo.textContent = splashLogo.getAttribute(`data-${lang}`);
+                splashTagline.textContent = splashTagline.getAttribute(`data-${lang}`);
+                loadingText.textContent = loadingText.getAttribute(`data-${lang}`);
                
-                setTimeout(() => {
-                    // Update text content
-                    splashLogo.textContent = splashLogo.getAttribute(`data-${lang}`);
-                    splashTagline.textContent = splashTagline.getAttribute(`data-${lang}`);
-                    loadingText.textContent = loadingText.getAttribute(`data-${lang}`);
-                   
-                    // Remove transition effect
-                    splashLogo.classList.remove('language-transitioning');
-                    splashTagline.classList.remove('language-transitioning');
-                    loadingText.classList.remove('language-transitioning');
-                }, 400);
-               
-            }, 2500); // Change language every 2.5 seconds
+            }, 3000); // Change language every 3 seconds
         }
 
         // LANGUAGE SWITCHING FUNCTIONALITY
@@ -1138,7 +1105,7 @@
             }
         }
 
-        // MANUAL PRICE SETTINGS - Updated with REAL current market prices!
+        // MANUAL PRICE SETTINGS
         const MANUAL_PRICES = {
             btc: { price: '107565', change: '-0.22' },
             eth: { price: '2519.6', change: '-0.45' },
@@ -1150,23 +1117,19 @@
 
         // Splash screen functionality
         window.addEventListener('load', function() {
-            // Start language cycling immediately when page loads
             initSplashLanguageCycling();
            
             setTimeout(function() {
                 const splash = document.getElementById('splash');
                 const mainContent = document.getElementById('mainContent');
                
-                // Stop the language cycling
                 clearInterval(splashInterval);
                
                 splash.classList.add('fade-out');
                 mainContent.classList.add('show');
                
-                // Set the main page language to match the last splash language
                 setTimeout(function() {
                     splash.style.display = 'none';
-                    // Initialize the main page with the language from splash
                     currentLanguage = splashLanguage;
                     if (currentLanguage !== 'en') {
                         const langSwitch = document.getElementById('langSwitch');
@@ -1175,7 +1138,6 @@
                         const esLabel = document.getElementById('esLabel');
                         const cnLabel = document.getElementById('cnLabel');
                        
-                        // Update UI to match splash language
                         enLabel.classList.remove('active');
                         esLabel.classList.remove('active');
                         cnLabel.classList.remove('active');
@@ -1191,11 +1153,10 @@
                             cnLabel.classList.add('active');
                         }
                        
-                        // Update page content
                         updatePageLanguage(currentLanguage);
                     }
-                }, 2000);
-            }, 8000);
+                }, 1500);
+            }, 6000);
         });
 
         // Update ticker with manual prices
@@ -1215,33 +1176,11 @@
 
         // Initialize everything
         setTimeout(() => {
-            // Initialize language toggle for main content
             initLanguageToggle();
-           
-            // Load manual prices
             updateTickerWithManualPrices();
-        }, 9000); // Wait for splash screen to finish
+        }, 7000);
 
-        // Console message
-        console.log(`
-🔥 CORE 6 TRADING SYSTEM LOADED 🔥
-
-🎯 PROFESSIONAL INSTITUTIONAL ANALYSIS 🎯
-✨ 6 Critical Factors → Elite Signal Detection ✨
-
-CORE 6 FACTORS:
-1. ⚡ Pulse - Momentum Detection
-2. 📈 Trend/Bias - Multi-timeframe Alignment  
-3. 🚨 Trap Risk - Divergence Analysis
-4. 🎯 Order Block Proximity - Institutional Zones
-5. 🚀 Momentum Rising - RSI + MACD Confluence
-6. 💪 Strength Grade - Market Conviction Score
-
-SIGNAL TYPES:
-🟢 Regular → 🔵 Institutional → 🟣 Advanced → ⭐ Elite
-
-🚀 Trade Like The Big Money! 🚀
-        `);
+        console.log('CORE 6 TRADING SYSTEM - Professional Institutional Analysis Platform');
     </script>
 </body>
 </html>
