@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Chart Shark - Premium Trading Community</title>
+    <title>Core 6 Trading System - The Chart Shark</title>
     <style>
-        * {m
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -89,8 +89,6 @@
         .chart-line:nth-child(4) { left: 120px; height: 120px; animation-delay: 0.6s; }
         .chart-line:nth-child(5) { left: 150px; height: 90px; animation-delay: 0.8s; }
         .chart-line:nth-child(6) { left: 180px; height: 130px; animation-delay: 1s; }
-        .chart-line:nth-child(7) { left: 210px; height: 70px; animation-delay: 1.2s; }
-        .chart-line:nth-child(8) { left: 240px; height: 110px; animation-delay: 1.4s; }
        
         .loading-text {
             font-size: 1.5rem;
@@ -416,7 +414,160 @@
                 transform: scale(1.02);
             }
         }
+
+        .hero {
+            padding: 10rem 2rem 4rem; /* More padding for ticker */
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .core6-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+            to { box-shadow: 0 0 30px rgba(255, 107, 53, 0.8); }
+        }
+       
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* CORE 6 FACTORS SECTION */
+        .core6-factors {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .factors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .factor-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .factor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 255, 136, 0.6);
+        }
+
+        .factor-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .factor-title {
+            color: #00ff88;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* SIGNAL TYPES SECTION */
+        .signal-types {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .signal-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .signal-card.regular {
+            border-color: rgba(0, 255, 136, 0.5);
+        }
+
+        .signal-card.institutional {
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .signal-card.advanced {
+            border-color: rgba(186, 85, 211, 0.5);
+        }
+
+        .signal-card.elite {
+            border-color: rgba(255, 20, 147, 0.5);
+        }
+
+        .signal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .signal-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .signal-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .signal-card.regular .signal-name {
+            color: #00ff88;
+        }
+
+        .signal-card.institutional .signal-name {
+            color: #00d4ff;
+        }
+
+        .signal-card.advanced .signal-name {
+            color: #ba55d3;
+        }
+
+        .signal-card.elite .signal-name {
+            color: #ff1493;
+        }
+
         /* LIVE MEMBER COUNTER */
         .member-counter {
             background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
@@ -430,19 +581,6 @@
             animation: memberGlow 3s ease-in-out infinite alternate;
         }
        
-        .online-count {
-            font-size: 1.2rem;
-            color: #00ff88;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-       
-        .online-number {
-            color: #00d4ff;
-            font-size: 1.5rem;
-            animation: countPulse 2s ease-in-out infinite;
-        }
-       
         .join-text {
             font-size: 1rem;
             color: #ffffff;
@@ -453,124 +591,7 @@
             0% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); }
             100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.6); }
         }
-       
-        @keyframes countPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-       
-        /* TRADING CALCULATOR */
-        .calculator-section {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-        }
-       
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-       
-        .calculator-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-        }
-       
-        .calc-input {
-            width: 100%;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-            border: 1px solid rgba(0, 255, 136, 0.5);
-            border-radius: 5px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 1rem;
-        }
-       
-        .calc-result {
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            color: #000;
-            padding: 1rem;
-            border-radius: 10px;
-            font-weight: bold;
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-       
-        /* SUCCESS STORIES CAROUSEL */
-        .success-carousel {
-            background: linear-gradient(45deg, rgba(111, 66, 193, 0.1), rgba(232, 62, 140, 0.1));
-            padding: 3rem 2rem;
-            overflow: hidden;
-            position: relative;
-        }
-       
-        .carousel-container {
-            display: flex;
-            animation: carouselSlide 20s ease-in-out infinite;
-        }
-       
-        .success-story {
-            min-width: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            margin: 0 1rem;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-        }
-       
-        .profit-amount {
-            font-size: 2rem;
-            color: #00ff88;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-       
-        .success-name {
-            color: #00d4ff;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-       
-        @keyframes carouselSlide {
-            0%, 20% { transform: translateX(0); }
-            25%, 45% { transform: translateX(-420px); }
-            50%, 70% { transform: translateX(-840px); }
-            75%, 95% { transform: translateX(-1260px); }
-            100% { transform: translateX(0); }
-        }
-       
-        .hero {
-            padding: 10rem 2rem 4rem; /* More padding for ticker */
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-       
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-       
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-       
+
         .premium-banner {
             background: linear-gradient(45deg, #ff6b35, #f7931e);
             padding: 1rem;
@@ -578,17 +599,12 @@
             margin: 2rem 0;
             animation: glow 2s ease-in-out infinite alternate;
         }
-       
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
-            to { box-shadow: 0 0 30px rgba(255, 107, 53, 0.8); }
-        }
-       
+
         .premium-banner h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
-       
+
         .cta-button {
             background: linear-gradient(45deg, #00ff88, #00d4ff);
             color: #000;
@@ -608,7 +624,8 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
         }
-       
+
+        /* FEATURES SECTION */
         .features {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -647,7 +664,7 @@
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-       
+
         .stats {
             background: rgba(0, 0, 0, 0.5);
             padding: 3rem 2rem;
@@ -667,39 +684,7 @@
             color: #00ff88;
             margin-bottom: 0.5rem;
         }
-       
-        .guides {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-       
-        .guides h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00d4ff;
-        }
-       
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-       
-        .guide-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #00ff88;
-            transition: all 0.3s ease;
-        }
-       
-        .guide-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(10px);
-        }
-       
+
         .footer {
             background: rgba(0, 0, 0, 0.8);
             padding: 2rem;
@@ -716,7 +701,7 @@
             font-size: 0.9rem;
             color: #ffc107;
         }
-       
+
         @media (max-width: 768px) {
             .splash-logo {
                 font-size: 3rem;
@@ -774,12 +759,12 @@
                 padding: 1rem;
             }
            
-            .calculator-grid {
+            .factors-grid {
                 grid-template-columns: 1fr;
             }
-           
-            .success-story {
-                min-width: 300px;
+
+            .signals-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -790,38 +775,38 @@
         <div class="ticker-content" id="tickerContent">
             <div class="ticker-item">
                 <span class="ticker-symbol">BTC/USD</span>
-                <span class="ticker-price" id="btcPrice">$67,420</span>
-                <span class="ticker-change positive" id="btcChange">+2.1%</span>
+                <span class="ticker-price" id="btcPrice">$107,565</span>
+                <span class="ticker-change negative" id="btcChange">-0.22%</span>
                 <span class="ticker-status">🔴 LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">ETH/USD</span>
-                <span class="ticker-price" id="ethPrice">$3,840</span>
-                <span class="ticker-change positive" id="ethChange">+1.8%</span>
+                <span class="ticker-price" id="ethPrice">$2,519.6</span>
+                <span class="ticker-change negative" id="ethChange">-0.45%</span>
                 <span class="ticker-status">🔴 LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">SPY</span>
-                <span class="ticker-price" id="spyPrice">$438.92</span>
-                <span class="ticker-change positive" id="spyChange">+0.7%</span>
+                <span class="ticker-price" id="spyPrice">$579.11</span>
+                <span class="ticker-change negative" id="spyChange">-0.68%</span>
                 <span class="ticker-status">🔴 LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">TSLA</span>
-                <span class="ticker-price" id="tslaPrice">$248.73</span>
-                <span class="ticker-change negative" id="tslaChange">-1.2%</span>
+                <span class="ticker-price" id="tslaPrice">$339.39</span>
+                <span class="ticker-change positive" id="tslaChange">+1.2%</span>
                 <span class="ticker-status">🔴 LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">AAPL</span>
-                <span class="ticker-price" id="aaplPrice">$189.45</span>
-                <span class="ticker-change positive" id="aaplChange">+0.9%</span>
+                <span class="ticker-price" id="aaplPrice">$195.34</span>
+                <span class="ticker-change positive" id="aaplChange">+0.5%</span>
                 <span class="ticker-status">🔴 LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">NVDA</span>
-                <span class="ticker-price" id="nvdaPrice">$892.16</span>
-                <span class="ticker-change positive" id="nvdaChange">+3.4%</span>
+                <span class="ticker-price" id="nvdaPrice">$131.31</span>
+                <span class="ticker-change negative" id="nvdaChange">-0.8%</span>
                 <span class="ticker-status">🔴 LIVE</span>
             </div>
         </div>
@@ -831,16 +816,14 @@
     <div class="splash-screen" id="splash">
         <div class="splash-content">
             <div class="splash-logo"
-                 data-en="📈 THE CHART SHARK"
-                 data-es="📈 EL TIBURÓN DEL GRÁFICO"
-                 data-cn="📈 图表鲨鱼">📈 THE CHART SHARK</div>
+                 data-en="📈 CORE 6 TRADING SYSTEM"
+                 data-es="📈 SISTEMA CORE 6 TRADING"
+                 data-cn="📈 CORE 6交易系统">📈 CORE 6 TRADING SYSTEM</div>
             <div class="splash-tagline"
-                 data-en="Elite Trading Community"
-                 data-es="Comunidad de Trading Elite"
-                 data-cn="精英交易社区">Elite Trading Community</div>
+                 data-en="Professional Institutional Analysis"
+                 data-es="Análisis Institucional Profesional"
+                 data-cn="专业机构分析">Professional Institutional Analysis</div>
             <div class="chart-animation">
-                <div class="chart-line"></div>
-                <div class="chart-line"></div>
                 <div class="chart-line"></div>
                 <div class="chart-line"></div>
                 <div class="chart-line"></div>
@@ -849,9 +832,9 @@
                 <div class="chart-line"></div>
             </div>
             <div class="loading-text"
-                 data-en="Loading Premium Experience..."
-                 data-es="Cargando Experiencia Premium..."
-                 data-cn="加载高级体验...">Loading Premium Experience...</div>
+                 data-en="Loading Core 6 System..."
+                 data-es="Cargando Sistema Core 6..."
+                 data-cn="加载Core 6系统...">Loading Core 6 System...</div>
             <div class="loading-progress">
                 <div class="loading-bar"></div>
             </div>
@@ -874,85 +857,105 @@
                             <span class="lang-label" id="cnLabel">中</span>
                         </div>
                     </div>
-                    <a href="premium.html" class="nav-btn premium-btn" data-en="Premium Access" data-es="Acceso Premium" data-cn="高级访问">Premium Access</a>
+                    <a href="premium.html" class="nav-btn premium-btn" data-en="Get Core 6 Access" data-es="Obtener Acceso Core 6" data-cn="获取Core 6访问">Get Core 6 Access</a>
                     <a href="https://discord.gg/AQ2S8KxDS5" class="nav-btn discord-btn" data-en="Join Discord" data-es="Únete a Discord" data-cn="加入Discord">Join Discord</a>
                 </div>
             </nav>
         </header>
 
         <section class="hero">
-            <h1 data-en="Master the Markets" data-es="Domina los Mercados" data-cn="掌控市场">Master the Markets</h1>
-            <div class="fishing-tagline" data-en='"TEACH A TRADER TO FISH, AND THEY PROFIT FOR A LIFETIME" 🎣' data-es='"ENSEÑA A UN TRADER A PESCAR, Y OBTENDRÁ GANANCIAS DE POR VIDA" 🎣' data-cn='"授人以渔，交易者终身受益" 🎣'>
-                "TEACH A TRADER TO FISH, AND THEY PROFIT FOR A LIFETIME" 🎣
+            <div class="core6-badge" data-en="🔥 CORE 6 TRADING SYSTEM 🔥" data-es="🔥 SISTEMA CORE 6 TRADING 🔥" data-cn="🔥 CORE 6交易系统 🔥">🔥 CORE 6 TRADING SYSTEM 🔥</div>
+            <h1 data-en="Master Institutional Trading" data-es="Domina el Trading Institucional" data-cn="掌握机构交易">Master Institutional Trading</h1>
+            <div class="fishing-tagline" data-en='"TRADE LIKE THE BIG MONEY WITH 6 CRITICAL FACTORS" 🎯' data-es='"OPERA COMO EL DINERO GRANDE CON 6 FACTORES CRÍTICOS" 🎯' data-cn='"用6个关键因素像大资金一样交易" 🎯'>
+                "TRADE LIKE THE BIG MONEY WITH 6 CRITICAL FACTORS" 🎯
             </div>
            
             <!-- LIVE MEMBER COUNTER -->
             <div class="member-counter">
-                <div class="join-text" data-en="Join active members sharing strategies and insights" data-es="Únete a miembros activos compartiendo estrategias y conocimientos" data-cn="加入活跃会员，分享策略和见解">Join active members sharing strategies and insights</div>
+                <div class="join-text" data-en="Join traders using our proprietary Core 6 system for institutional-level analysis" data-es="Únete a traders usando nuestro sistema Core 6 propietario para análisis de nivel institucional" data-cn="加入使用我们专有Core 6系统进行机构级分析的交易者">Join traders using our proprietary Core 6 system for institutional-level analysis</div>
             </div>
            
             <div class="premium-banner">
-                <h3 data-en="🔥 NOW OFFERING 2 PREMIUM TIERS 🔥" data-es="🔥 AHORA OFRECEMOS 2 NIVELES PREMIUM 🔥" data-cn="🔥 现在提供2个高级层级 🔥">🔥 NOW OFFERING 2 PREMIUM TIERS 🔥</h3>
-                <p data-en="From $50/month Starter to $500/month Pro access" data-es="Desde $50/mes Inicial hasta $500/mes acceso Pro" data-cn="从每月50美元入门版到每月500美元专业版">From $50/month Starter to $500/month Pro access</p>
-                <a href="premium.html" class="cta-button" data-en="View Premium Plans" data-es="Ver Planes Premium" data-cn="查看高级方案">View Premium Plans</a>
+                <h3 data-en="🚀 GET CORE 6 INDICATOR ACCESS 🚀" data-es="🚀 OBTÉN ACCESO AL INDICADOR CORE 6 🚀" data-cn="🚀 获取CORE 6指标访问 🚀">🚀 GET CORE 6 INDICATOR ACCESS 🚀</h3>
+                <p data-en="Professional TradingView indicator with complete training system - learn to trade like institutions" data-es="Indicador profesional de TradingView con sistema de entrenamiento completo - aprende a operar como las instituciones" data-cn="专业TradingView指标与完整培训系统-学会像机构一样交易">Professional TradingView indicator with complete training system - learn to trade like institutions</p>
+                <a href="premium.html" class="cta-button" data-en="Get Core 6 System" data-es="Obtener Sistema Core 6" data-cn="获取Core 6系统">Get Core 6 System</a>
             </div>
            
-            <a href="premium.html" class="cta-button" data-en="🚀 Get Premium Access" data-es="🚀 Obtener Acceso Premium" data-cn="🚀 获取高级访问">🚀 Get Premium Access</a>
+            <a href="premium.html" class="cta-button" data-en="🎯 Access Premium Core 6" data-es="🎯 Acceder a Core 6 Premium" data-cn="🎯 访问高级Core 6">🎯 Access Premium Core 6</a>
            
             <div class="disclaimer">
-                <strong data-en="Risk Disclaimer:" data-es="Aviso de Riesgo:" data-cn="风险提示:">Risk Disclaimer:</strong> <span data-en="Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose." data-es="El trading implica un riesgo sustancial y no es adecuado para todos los inversores. El rendimiento pasado no garantiza resultados futuros. Solo opere con dinero que pueda permitirse perder." data-cn="交易涉及重大风险，不适合所有投资者。过往表现不能保证未来结果。只能用您承受得起损失的资金进行交易。">Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose.</span>
+                <strong data-en="Risk Disclaimer:" data-es="Aviso de Riesgo:" data-cn="风险提示:">Risk Disclaimer:</strong> <span data-en="Trading involves substantial risk and is not suitable for all investors. The Core 6 system is for educational purposes and does not guarantee profits." data-es="El trading implica un riesgo sustancial y no es adecuado para todos los inversores. El sistema Core 6 es para fines educativos y no garantiza ganancias." data-cn="交易涉及重大风险，不适合所有投资者。Core 6系统仅供教育目的，不保证利润。">Trading involves substantial risk and is not suitable for all investors. The Core 6 system is for educational purposes and does not guarantee profits.</span>
             </div>
         </section>
 
-        <!-- TRADING CALCULATOR TOOLS -->
-        <section class="calculator-section">
-            <h2 style="text-align: center; color: #00ff88; font-size: 2.5rem; margin-bottom: 2rem;">Free Trading Calculators</h2>
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">Position Size Calculator</h3>
-                    <input type="number" class="calc-input" id="accountSize" placeholder="Account Size ($)">
-                    <input type="number" class="calc-input" id="riskPercent" placeholder="Risk Percentage (%)">
-                    <input type="number" class="calc-input" id="stopLoss" placeholder="Stop Loss (pips/points)">
-                    <div class="calc-result" id="positionResult">Enter values to calculate</div>
+        <!-- CORE 6 FACTORS EXPLANATION -->
+        <section class="core6-factors">
+            <h2 style="text-align: center; color: #00ff88; font-size: 2.5rem; margin-bottom: 2rem;" data-en="The 6 Critical Trading Factors" data-es="Los 6 Factores Críticos de Trading" data-cn="6个关键交易因素">The 6 Critical Trading Factors</h2>
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <div class="factor-icon">⚡</div>
+                    <div class="factor-title" data-en="1. Pulse" data-es="1. Pulso" data-cn="1. 脉冲">1. Pulse</div>
+                    <p data-en="Momentum detection system that identifies accelerating and decelerating market movements with precision timing." data-es="Sistema de detección de momentum que identifica movimientos acelerados y desacelerados del mercado con timing preciso." data-cn="动量检测系统，精确识别市场加速和减速运动的时机。">Momentum detection system that identifies accelerating and decelerating market movements with precision timing.</p>
                 </div>
-               
-                <div class="calculator-card">
-                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">Risk/Reward Calculator</h3>
-                    <input type="number" class="calc-input" id="entryPrice" placeholder="Entry Price">
-                    <input type="number" class="calc-input" id="stopLossPrice" placeholder="Stop Loss Price">
-                    <input type="number" class="calc-input" id="takeProfitPrice" placeholder="Take Profit Price">
-                    <div class="calc-result" id="rrResult">Enter values to calculate</div>
+                
+                <div class="factor-card">
+                    <div class="factor-icon">📈</div>
+                    <div class="factor-title" data-en="2. Trend/Bias" data-es="2. Tendencia/Sesgo" data-cn="2. 趋势/偏向">2. Trend/Bias</div>
+                    <p data-en="Multi-timeframe alignment analysis ensuring you trade with the institutional flow, not against it." data-es="Análisis de alineación multi-timeframe asegurando que operes con el flujo institucional, no en su contra." data-cn="多时间框架对齐分析，确保您与机构流动交易，而不是逆势而为。">Multi-timeframe alignment analysis ensuring you trade with the institutional flow, not against it.</p>
                 </div>
-               
-                <div class="calculator-card">
-                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">Profit/Loss Calculator</h3>
-                    <input type="number" class="calc-input" id="positionSize" placeholder="Position Size">
-                    <input type="number" class="calc-input" id="buyPrice" placeholder="Buy Price">
-                    <input type="number" class="calc-input" id="sellPrice" placeholder="Sell Price">
-                    <div class="calc-result" id="plResult">Enter values to calculate</div>
+                
+                <div class="factor-card">
+                    <div class="factor-icon">🚨</div>
+                    <div class="factor-title" data-en="3. Trap Risk" data-es="3. Riesgo de Trampa" data-cn="3. 陷阱风险">3. Trap Risk</div>
+                    <p data-en="Advanced divergence detection that warns of potential market traps and false breakouts before they happen." data-es="Detección avanzada de divergencias que advierte sobre trampas potenciales del mercado y breakouts falsos antes de que ocurran." data-cn="高级背离检测，在市场陷阱和虚假突破发生之前发出警告。">Advanced divergence detection that warns of potential market traps and false breakouts before they happen.</p>
+                </div>
+                
+                <div class="factor-card">
+                    <div class="factor-icon">🎯</div>
+                    <div class="factor-title" data-en="4. Order Block Proximity" data-es="4. Proximidad de Bloque de Órdenes" data-cn="4. 订单块接近度">4. Order Block Proximity</div>
+                    <p data-en="Identifies institutional order blocks and liquidity zones where big money is likely to enter or exit positions." data-es="Identifica bloques de órdenes institucionales y zonas de liquidez donde es probable que el dinero grande entre o salga de posiciones." data-cn="识别机构订单块和流动性区域，大资金可能在此进入或退出头寸。">Identifies institutional order blocks and liquidity zones where big money is likely to enter or exit positions.</p>
+                </div>
+                
+                <div class="factor-card">
+                    <div class="factor-icon">🚀</div>
+                    <div class="factor-title" data-en="5. Momentum Rising" data-es="5. Momentum Ascendente" data-cn="5. 动量上升">5. Momentum Rising</div>
+                    <p data-en="Combines RSI and MACD signals to confirm strengthening momentum before major price movements occur." data-es="Combina señales RSI y MACD para confirmar el fortalecimiento del momentum antes de que ocurran movimientos importantes de precio." data-cn="结合RSI和MACD信号，在重大价格变动发生之前确认动量增强。">Combines RSI and MACD signals to confirm strengthening momentum before major price movements occur.</p>
+                </div>
+                
+                <div class="factor-card">
+                    <div class="factor-icon">💪</div>
+                    <div class="factor-title" data-en="6. Strength Grade" data-es="6. Grado de Fuerza" data-cn="6. 强度等级">6. Strength Grade</div>
+                    <p data-en="Comprehensive scoring system (MAX, Strong, Good, Weak) that grades overall market strength and conviction." data-es="Sistema de puntuación integral (MAX, Fuerte, Bueno, Débil) que califica la fuerza general del mercado y la convicción." data-cn="综合评分系统（MAX、强、好、弱），评估整体市场强度和信念。">Comprehensive scoring system (MAX, Strong, Good, Weak) that grades overall market strength and conviction.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SUCCESS STORIES CAROUSEL -->
-        <section class="success-carousel">
-            <h2 style="text-align: center; color: #00ff88; font-size: 2.5rem; margin-bottom: 2rem;">Member Success Stories</h2>
-            <div class="carousel-container">
-                <div class="success-story">
-                    <div class="success-name">Mike R. - Pro Trader</div>
-                    <p>"The live trading room delivered incredible results this month!"</p>
+        <!-- SIGNAL TYPES SECTION -->
+        <section class="signal-types">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #00d4ff; margin-bottom: 2rem;" data-en="4 Types of Core 6 Signals" data-es="4 Tipos de Señales Core 6" data-cn="4种Core 6信号类型">4 Types of Core 6 Signals</h2>
+            <div class="signals-grid">
+                <div class="signal-card regular">
+                    <div class="signal-icon">🟢</div>
+                    <div class="signal-name" data-en="Regular Signals" data-es="Señales Regulares" data-cn="常规信号">Regular Signals</div>
+                    <p data-en="Standard high-probability setups when 4+ Core 6 factors align for solid trade opportunities." data-es="Configuraciones estándar de alta probabilidad cuando 4+ factores Core 6 se alinean para oportunidades sólidas de trading." data-cn="当4个以上Core 6因素对齐时的标准高概率设置，提供稳固的交易机会。">Standard high-probability setups when 4+ Core 6 factors align for solid trade opportunities.</p>
                 </div>
-                <div class="success-story">
-                    <div class="success-name">Sarah K. - Pro Trader</div>
-                    <p>"The live trading calls are absolutely incredible!"</p>
+                
+                <div class="signal-card institutional">
+                    <div class="signal-icon">🔵</div>
+                    <div class="signal-name" data-en="Institutional Signals" data-es="Señales Institucionales" data-cn="机构信号">Institutional Signals</div>
+                    <p data-en="Big money moves detected through volume analysis, order flow, and institutional footprint tracking." data-es="Movimientos de dinero grande detectados a través de análisis de volumen, flujo de órdenes y seguimiento de huella institucional." data-cn="通过成交量分析、订单流和机构足迹跟踪检测大资金移动。">Big money moves detected through volume analysis, order flow, and institutional footprint tracking.</p>
                 </div>
-                <div class="success-story">
-                    <div class="success-name">James T. - Pro Trader</div>
-                    <p>"1-on-1 coaching changed my entire trading approach!"</p>
+                
+                <div class="signal-card advanced">
+                    <div class="signal-icon">🟣</div>
+                    <div class="signal-name" data-en="Advanced Signals" data-es="Señales Avanzadas" data-cn="高级信号">Advanced Signals</div>
+                    <p data-en="Enhanced divergence patterns including triple divergence and hidden continuation signals." data-es="Patrones de divergencia mejorados incluyendo triple divergencia y señales de continuación ocultas." data-cn="增强的背离模式，包括三重背离和隐藏的持续信号。">Enhanced divergence patterns including triple divergence and hidden continuation signals.</p>
                 </div>
-                <div class="success-story">
-                    <div class="success-name">Lisa M. - Premium Starter</div>
-                    <p>"Best investment I've ever made for my trading!"</p>
+                
+                <div class="signal-card elite">
+                    <div class="signal-icon">⭐</div>
+                    <div class="signal-name" data-en="Elite Signals" data-es="Señales Elite" data-cn="精英信号">Elite Signals</div>
+                    <p data-en="Rare, highest-quality setups with potential for 100+ point moves. Maximum institutional backing required." data-es="Configuraciones raras de la más alta calidad con potencial para movimientos de 100+ puntos. Se requiere respaldo institucional máximo." data-cn="稀有的最高质量设置，具有100+点移动的潜力。需要最大的机构支持。">Rare, highest-quality setups with potential for 100+ point moves. Maximum institutional backing required.</p>
                 </div>
             </div>
         </section>
@@ -960,115 +963,71 @@
         <section class="stats">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>2</h3>
-                    <p>Premium Tiers</p>
+                    <h3>6</h3>
+                    <p data-en="Core Factors" data-es="Factores Core" data-cn="核心因素">Core Factors</p>
                 </div>
                 <div class="stat-item">
-                    <h3>50+</h3>
-                    <p>Active Members</p>
+                    <h3>4</h3>
+                    <p data-en="Signal Types" data-es="Tipos de Señal" data-cn="信号类型">Signal Types</p>
                 </div>
                 <div class="stat-item">
                     <h3>24/7</h3>
-                    <p>Market Analysis</p>
+                    <p data-en="Market Scanning" data-es="Escaneo de Mercado" data-cn="市场扫描">Market Scanning</p>
                 </div>
                 <div class="stat-item">
-                    <h3>Pro</h3>
-                    <p>Trading Community</p>
+                    <h3>100+</h3>
+                    <p data-en="Point Potential" data-es="Potencial de Puntos" data-cn="点位潜力">Point Potential</p>
                 </div>
             </div>
         </section>
 
         <section class="features">
-            <h2>What You Get</h2>
+            <h2 data-en="What You Get with Core 6" data-es="Lo Que Obtienes con Core 6" data-cn="使用Core 6您将获得什么">What You Get with Core 6</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>10 Trading Guides</h3>
-                    <p>Comprehensive guides covering every aspect of trading, from basics to advanced strategies</p>
-                    <a href="premium.html" class="cta-button">Upgrade for More</a>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Discord Community</h3>
-                    <p>Join traders sharing insights, strategies, and real-time market analysis</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Market Analysis</h3>
-                    <p>Daily market breakdowns, trend analysis, and trading opportunities identified by experts</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Live Trading Calls</h3>
-                    <p>Real-time trading signals and setups from professional traders (Premium tiers)</p>
-                    <a href="premium.html" class="cta-button">Go Premium</a>
+                    <h3 data-en="Core 6 Indicator" data-es="Indicador Core 6" data-cn="Core 6指标">Core 6 Indicator</h3>
+                    <p data-en="Professional TradingView indicator that analyzes all 6 factors in real-time with institutional-grade precision." data-es="Indicador profesional de TradingView que analiza los 6 factores en tiempo real con precisión de grado institucional." data-cn="专业TradingView指标，以机构级精度实时分析所有6个因素。">Professional TradingView indicator that analyzes all 6 factors in real-time with institutional-grade precision.</p>
+                    <a href="premium.html" class="cta-button" data-en="Get Indicator" data-es="Obtener Indicador" data-cn="获取指标">Get Indicator</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">👑</div>
-                    <h3>Pro Trading System</h3>
-                    <p>Access to our exclusive trading strategies and advanced market analysis</p>
-                    <a href="premium.html" class="cta-button">Go Pro</a>
+                    <div class="feature-icon">📚</div>
+                    <h3 data-en="Core 6 Training" data-es="Entrenamiento Core 6" data-cn="Core 6培训">Core 6 Training</h3>
+                    <p data-en="Complete video tutorials and guides teaching you how to master all 6 factors and signal types." data-es="Tutoriales en video completos y guías que te enseñan cómo dominar los 6 factores y tipos de señales." data-cn="完整的视频教程和指南，教您如何掌握所有6个因素和信号类型。">Complete video tutorials and guides teaching you how to master all 6 factors and signal types.</p>
+                    <a href="premium.html" class="cta-button" data-en="Learn System" data-es="Aprender Sistema" data-cn="学习系统">Learn System</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 data-en="Hedge Fund Analysis" data-es="Análisis de Hedge Fund" data-cn="对冲基金分析">Hedge Fund Analysis</h3>
+                    <p data-en="Advanced features including Kelly Criterion position sizing, liquidity analysis, and auction market theory." data-es="Características avanzadas incluyendo dimensionamiento de posición Kelly Criterion, análisis de liquidez y teoría de mercado de subasta." data-cn="高级功能，包括凯利准则头寸大小调整、流动性分析和拍卖市场理论。">Advanced features including Kelly Criterion position sizing, liquidity analysis, and auction market theory.</p>
+                    <a href="premium.html" class="cta-button" data-en="Learn More" data-es="Aprender Más" data-cn="了解更多">Learn More</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 data-en="Advanced Strategies" data-es="Estrategias Avanzadas" data-cn="高级策略">Advanced Strategies</h3>
+                    <p data-en="Learn to identify Elite setups with 100+ point potential using advanced Core 6 configurations." data-es="Aprende a identificar configuraciones Elite con potencial de 100+ puntos usando configuraciones avanzadas de Core 6." data-cn="学习使用高级Core 6配置识别具有100+点潜力的精英设置。">Learn to identify Elite setups with 100+ point potential using advanced Core 6 configurations.</p>
+                    <a href="premium.html" class="cta-button" data-en="Master Elite Setups" data-es="Dominar Configuraciones Elite" data-cn="掌握精英设置">Master Elite Setups</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
-                    <h3>1-on-1 Coaching</h3>
-                    <p>Personal mentorship and custom trading plans from experienced professionals (Premium tiers)</p>
-                    <a href="premium.html" class="cta-button">Get Coaching</a>
+                    <h3 data-en="1-on-1 Core 6 Coaching" data-es="Coaching Core 6 1-a-1" data-cn="一对一Core 6指导">1-on-1 Core 6 Coaching</h3>
+                    <p data-en="Personal training sessions to master the Core 6 system and develop your institutional trading edge." data-es="Sesiones de entrenamiento personal para dominar el sistema Core 6 y desarrollar tu ventaja de trading institucional." data-cn="个人培训课程，掌握Core 6系统并培养您的机构交易优势。">Personal training sessions to master the Core 6 system and develop your institutional trading edge.</p>
+                    <a href="premium.html" class="cta-button" data-en="Book Session" data-es="Reservar Sesión" data-cn="预约会话">Book Session</a>
                 </div>
-            </div>
-        </section>
-
-        <section class="guides">
-            <h2>Free Trading Guides</h2>
-            <div class="guides-grid">
-                <div class="guide-card">
-                    <h3>📊 Technical Analysis Basics</h3>
-                    <p>Master chart patterns, indicators, and price action</p>
-                </div>
-                <div class="guide-card">
-                    <h3>💰 Risk Management</h3>
-                    <p>Protect your capital with proven risk management strategies</p>
-                </div>
-                <div class="guide-card">
-                    <h3>🎯 Entry & Exit Strategies</h3>
-                    <p>Perfect your timing with advanced entry and exit techniques</p>
-                </div>
-                <div class="guide-card">
-                    <h3>📈 Trend Analysis</h3>
-                    <p>Identify and trade with the prevailing market trends</p>
-                </div>
-                <div class="guide-card">
-                    <h3>🧠 Trading Psychology</h3>
-                    <p>Master the mental game of trading for consistent success</p>
-                </div>
-                <div class="guide-card">
-                    <h3>⚡ Scalping Strategies</h3>
-                    <p>Quick profits with fast-paced scalping techniques</p>
-                </div>
-                <div class="guide-card">
-                    <h3>🏗️ Portfolio Building</h3>
-                    <p>Construct a balanced and profitable trading portfolio</p>
-                </div>
-                <div class="guide-card">
-                    <h3>📱 Platform Setup</h3>
-                    <p>Optimize your trading setup for maximum efficiency</p>
-                </div>
-                <div class="guide-card">
-                    <h3>🌍 Market Fundamentals</h3>
-                    <p>Understand the forces that drive market movements</p>
-                </div>
-                <div class="guide-card">
-                    <h3>🚀 Advanced Techniques</h3>
-                    <p>Pro strategies for experienced traders</p>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 data-en="Divergence Trading Mode" data-es="Modo de Trading de Divergencia" data-cn="背离交易模式">Divergence Trading Mode</h3>
+                    <p data-en="Specialized parameters and risk management designed specifically for divergence and mean reversion strategies." data-es="Parámetros especializados y gestión de riesgo diseñados específicamente para estrategias de divergencia y reversión a la media." data-cn="专门为背离和均值回归策略设计的专业参数和风险管理。">Specialized parameters and risk management designed specifically for divergence and mean reversion strategies.</p>
+                    <a href="premium.html" class="cta-button" data-en="Activate Mode" data-es="Activar Modo" data-cn="激活模式">Activate Mode</a>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
-            <p>&copy; 2025 The Chart Shark. All rights reserved.</p>
-            <p>Trading education and community platform</p>
+            <p data-en="© 2025 The Chart Shark - Core 6 Trading System. All rights reserved." data-es="© 2025 El Tiburón del Gráfico - Sistema Core 6 Trading. Todos los derechos reservados." data-cn="© 2025 图表鲨鱼 - Core 6交易系统。保留所有权利。">&copy; 2025 The Chart Shark - Core 6 Trading System. All rights reserved.</p>
+            <p data-en="Professional institutional trading education and analysis" data-es="Educación y análisis de trading institucional profesional" data-cn="专业机构交易教育和分析">Professional institutional trading education and analysis</p>
             <div style="margin-top: 1rem;">
-                <a href="premium.html" style="color: #00ff88; text-decoration: none; margin: 0 1rem;">Premium Plans</a>
+                <a href="premium.html" style="color: #00ff88; text-decoration: none; margin: 0 1rem;" data-en="Core 6 Premium" data-es="Core 6 Premium" data-cn="Core 6高级">Core 6 Premium</a>
                 <a href="https://discord.gg/AQ2S8KxDS5" style="color: #00d4ff; text-decoration: none; margin: 0 1rem;">Discord</a>
             </div>
         </footer>
@@ -1145,7 +1104,6 @@
                 currentLanguage = lang;
                
                 // Update toggle UI
-                // Reset all labels
                 enLabel.classList.remove('active');
                 esLabel.classList.remove('active');
                 cnLabel.classList.remove('active');
@@ -1177,373 +1135,6 @@
                         element.textContent = text;
                     }
                 });
-               
-                // Update section headers
-                const headers = {
-                    en: {
-                        calculators: "Free Trading Calculators",
-                        positionCalc: "Position Size Calculator",
-                        riskRewardCalc: "Risk/Reward Calculator",
-                        profitLossCalc: "Profit/Loss Calculator",
-                        successStories: "Member Success Stories",
-                        whatYouGet: "What You Get",
-                        freeGuides: "Free Trading Guides"
-                    },
-                    es: {
-                        calculators: "Calculadoras de Trading Gratuitas",
-                        positionCalc: "Calculadora de Tamaño de Posición",
-                        riskRewardCalc: "Calculadora de Riesgo/Recompensa",
-                        profitLossCalc: "Calculadora de Ganancias/Pérdidas",
-                        successStories: "Historias de Éxito de Miembros",
-                        whatYouGet: "Lo Que Obtienes",
-                        freeGuides: "Guías de Trading Gratuitas"
-                    },
-                    cn: {
-                        calculators: "免费交易计算器",
-                        positionCalc: "仓位大小计算器",
-                        riskRewardCalc: "风险/回报计算器",
-                        profitLossCalc: "盈亏计算器",
-                        successStories: "会员成功故事",
-                        whatYouGet: "您将获得什么",
-                        freeGuides: "免费交易指南"
-                    }
-                };
-               
-                // Update calculator section
-                const calcHeader = document.querySelector('.calculator-section h2');
-                if (calcHeader) calcHeader.textContent = headers[lang].calculators;
-               
-                // Update calculator card headers
-                const calcCards = document.querySelectorAll('.calculator-card h3');
-                if (calcCards[0]) calcCards[0].textContent = headers[lang].positionCalc;
-                if (calcCards[1]) calcCards[1].textContent = headers[lang].riskRewardCalc;
-                if (calcCards[2]) calcCards[2].textContent = headers[lang].profitLossCalc;
-               
-                // Update success stories header
-                const successHeader = document.querySelector('.success-carousel h2');
-                if (successHeader) successHeader.textContent = headers[lang].successStories;
-               
-                // Update features header
-                const featuresHeader = document.querySelector('.features h2');
-                if (featuresHeader) featuresHeader.textContent = headers[lang].whatYouGet;
-               
-                // Update guides header
-                const guidesHeader = document.querySelector('.guides h2');
-                if (guidesHeader) guidesHeader.textContent = headers[lang].freeGuides;
-               
-                // Update placeholder texts
-                updatePlaceholders(lang);
-               
-                // Update success stories
-                updateSuccessStories(lang);
-               
-                // Update feature cards
-                updateFeatureCards(lang);
-               
-                // Update guide cards
-                updateGuideCards(lang);
-               
-                // Update stats
-                updateStats(lang);
-               
-                // Update footer
-                updateFooter(lang);
-            }
-           
-            function updatePlaceholders(lang) {
-                const placeholders = {
-                    en: {
-                        accountSize: "Account Size ($)",
-                        riskPercent: "Risk Percentage (%)",
-                        stopLoss: "Stop Loss (pips/points)",
-                        entryPrice: "Entry Price",
-                        stopLossPrice: "Stop Loss Price",
-                        takeProfitPrice: "Take Profit Price",
-                        positionSize: "Position Size",
-                        buyPrice: "Buy Price",
-                        sellPrice: "Sell Price",
-                        enterValues: "Enter values to calculate"
-                    },
-                    es: {
-                        accountSize: "Tamaño de Cuenta ($)",
-                        riskPercent: "Porcentaje de Riesgo (%)",
-                        stopLoss: "Stop Loss (pips/puntos)",
-                        entryPrice: "Precio de Entrada",
-                        stopLossPrice: "Precio de Stop Loss",
-                        takeProfitPrice: "Precio de Take Profit",
-                        positionSize: "Tamaño de Posición",
-                        buyPrice: "Precio de Compra",
-                        sellPrice: "Precio de Venta",
-                        enterValues: "Ingrese valores para calcular"
-                    },
-                    cn: {
-                        accountSize: "账户规模 ($)",
-                        riskPercent: "风险百分比 (%)",
-                        stopLoss: "止损 (点数)",
-                        entryPrice: "入场价格",
-                        stopLossPrice: "止损价格",
-                        takeProfitPrice: "止盈价格",
-                        positionSize: "仓位大小",
-                        buyPrice: "买入价格",
-                        sellPrice: "卖出价格",
-                        enterValues: "输入数值进行计算"
-                    }
-                };
-               
-                // Update input placeholders
-                document.getElementById('accountSize').placeholder = placeholders[lang].accountSize;
-                document.getElementById('riskPercent').placeholder = placeholders[lang].riskPercent;
-                document.getElementById('stopLoss').placeholder = placeholders[lang].stopLoss;
-                document.getElementById('entryPrice').placeholder = placeholders[lang].entryPrice;
-                document.getElementById('stopLossPrice').placeholder = placeholders[lang].stopLossPrice;
-                document.getElementById('takeProfitPrice').placeholder = placeholders[lang].takeProfitPrice;
-                document.getElementById('positionSize').placeholder = placeholders[lang].positionSize;
-                document.getElementById('buyPrice').placeholder = placeholders[lang].buyPrice;
-                document.getElementById('sellPrice').placeholder = placeholders[lang].sellPrice;
-               
-                // Update result placeholders
-                const results = document.querySelectorAll('.calc-result');
-                results.forEach(result => {
-                    if (result.textContent === "Enter values to calculate" ||
-                        result.textContent === "Ingrese valores para calcular" ||
-                        result.textContent === "输入数值进行计算") {
-                        result.textContent = placeholders[lang].enterValues;
-                    }
-                });
-            }
-           
-            function updateSuccessStories(lang) {
-                const stories = {
-                    en: [
-                        '"The live trading room delivered incredible results this month!"',
-                        '"The live trading calls are absolutely incredible!"',
-                        '"1-on-1 coaching changed my entire trading approach!"',
-                        '"Best investment I\'ve ever made for my trading!"'
-                    ],
-                    es: [
-                        '"¡La sala de trading en vivo entregó resultados increíbles este mes!"',
-                        '"¡Las llamadas de trading en vivo son absolutamente increíbles!"',
-                        '"¡El coaching 1-a-1 cambió completamente mi enfoque de trading!"',
-                        '"¡La mejor inversión que he hecho para mi trading!"'
-                    ],
-                    cn: [
-                        '"实时交易室这个月带来了令人难以置信的结果！"',
-                        '"实时交易提示绝对令人惊叹！"',
-                        '"一对一指导彻底改变了我的交易方法！"',
-                        '"这是我为交易做过的最好投资！"'
-                    ]
-                };
-               
-                const storyElements = document.querySelectorAll('.success-story p');
-                storyElements.forEach((story, index) => {
-                    if (stories[lang][index]) {
-                        story.textContent = stories[lang][index];
-                    }
-                });
-            }
-           
-            function updateFeatureCards(lang) {
-                const features = {
-                    en: {
-                        titles: ["10 Trading Guides", "Discord Community", "Market Analysis", "Live Trading Calls", "Pro Trading System", "1-on-1 Coaching"],
-                        descriptions: [
-                            "Comprehensive guides covering every aspect of trading, from basics to advanced strategies",
-                            "Join traders sharing insights, strategies, and real-time market analysis",
-                            "Daily market breakdowns, trend analysis, and trading opportunities identified by experts",
-                            "Real-time trading signals and setups from professional traders (Premium tiers)",
-                            "Access to our exclusive trading strategies and advanced market analysis",
-                            "Personal mentorship and custom trading plans from experienced professionals (Premium tiers)"
-                        ],
-                        buttons: ["Upgrade for More", "Go Premium", "Go Pro", "Get Coaching"]
-                    },
-                    es: {
-                        titles: ["10 Guías de Trading", "Comunidad Discord", "Análisis de Mercado", "Llamadas de Trading en Vivo", "Sistema de Trading Pro", "Coaching 1-a-1"],
-                        descriptions: [
-                            "Guías completas que cubren todos los aspectos del trading, desde lo básico hasta estrategias avanzadas",
-                            "Únete a traders compartiendo insights, estrategias y análisis de mercado en tiempo real",
-                            "Análisis diarios del mercado, análisis de tendencias y oportunidades de trading identificadas por expertos",
-                            "Señales de trading en tiempo real y configuraciones de traders profesionales (niveles Premium)",
-                            "Acceso a nuestras estrategias de trading exclusivas y análisis de mercado avanzado",
-                            "Mentoría personal y planes de trading personalizados de profesionales experimentados (niveles Premium)"
-                        ],
-                        buttons: ["Actualizar por Más", "Ir Premium", "Ir Pro", "Obtener Coaching"]
-                    },
-                    cn: {
-                        titles: ["10个交易指南", "Discord社区", "市场分析", "实时交易提示", "专业交易系统", "一对一指导"],
-                        descriptions: [
-                            "全面指南涵盖交易的各个方面，从基础到高级策略",
-                            "加入交易者社区，分享见解、策略和实时市场分析",
-                            "专家识别的每日市场细分、趋势分析和交易机会",
-                            "来自专业交易者的实时交易信号和设置（高级层级）",
-                            "访问我们独家的交易策略和高级市场分析",
-                            "来自经验丰富专业人士的个人指导和定制交易计划（高级层级）"
-                        ],
-                        buttons: ["升级获取更多", "升级高级", "升级专业", "获取指导"]
-                    }
-                };
-               
-                const featureCards = document.querySelectorAll('.feature-card');
-                featureCards.forEach((card, index) => {
-                    const title = card.querySelector('h3');
-                    const description = card.querySelector('p');
-                    const button = card.querySelector('.cta-button');
-                   
-                    if (title && features[lang].titles[index]) {
-                        title.textContent = features[lang].titles[index];
-                    }
-                    if (description && features[lang].descriptions[index]) {
-                        description.textContent = features[lang].descriptions[index];
-                    }
-                    if (button && features[lang].buttons) {
-                        // Map buttons to feature cards that have them
-                        if (index === 0) button.textContent = features[lang].buttons[0];
-                        if (index === 3) button.textContent = features[lang].buttons[1];
-                        if (index === 4) button.textContent = features[lang].buttons[2];
-                        if (index === 5) button.textContent = features[lang].buttons[3];
-                    }
-                });
-            }
-           
-            function updateGuideCards(lang) {
-                const guides = {
-                    en: {
-                        titles: [
-                            "📊 Technical Analysis Basics",
-                            "💰 Risk Management",
-                            "🎯 Entry & Exit Strategies",
-                            "📈 Trend Analysis",
-                            "🧠 Trading Psychology",
-                            "⚡ Scalping Strategies",
-                            "🏗️ Portfolio Building",
-                            "📱 Platform Setup",
-                            "🌍 Market Fundamentals",
-                            "🚀 Advanced Techniques"
-                        ],
-                        descriptions: [
-                            "Master chart patterns, indicators, and price action",
-                            "Protect your capital with proven risk management strategies",
-                            "Perfect your timing with advanced entry and exit techniques",
-                            "Identify and trade with the prevailing market trends",
-                            "Master the mental game of trading for consistent success",
-                            "Quick profits with fast-paced scalping techniques",
-                            "Construct a balanced and profitable trading portfolio",
-                            "Optimize your trading setup for maximum efficiency",
-                            "Understand the forces that drive market movements",
-                            "Pro strategies for experienced traders"
-                        ]
-                    },
-                    es: {
-                        titles: [
-                            "📊 Fundamentos de Análisis Técnico",
-                            "💰 Gestión de Riesgo",
-                            "🎯 Estrategias de Entrada y Salida",
-                            "📈 Análisis de Tendencias",
-                            "🧠 Psicología del Trading",
-                            "⚡ Estrategias de Scalping",
-                            "🏗️ Construcción de Portafolio",
-                            "📱 Configuración de Plataforma",
-                            "🌍 Fundamentos del Mercado",
-                            "🚀 Técnicas Avanzadas"
-                        ],
-                        descriptions: [
-                            "Domina patrones de gráficos, indicadores y acción del precio",
-                            "Protege tu capital con estrategias probadas de gestión de riesgo",
-                            "Perfecciona tu timing con técnicas avanzadas de entrada y salida",
-                            "Identifica y opera con las tendencias predominantes del mercado",
-                            "Domina el juego mental del trading para el éxito consistente",
-                            "Ganancias rápidas con técnicas de scalping de ritmo acelerado",
-                            "Construye un portafolio de trading equilibrado y rentable",
-                            "Optimiza tu configuración de trading para máxima eficiencia",
-                            "Entiende las fuerzas que impulsan los movimientos del mercado",
-                            "Estrategias profesionales para traders experimentados"
-                        ]
-                    },
-                    cn: {
-                        titles: [
-                            "📊 技术分析基础",
-                            "💰 风险管理",
-                            "🎯 入场和出场策略",
-                            "📈 趋势分析",
-                            "🧠 交易心理学",
-                            "⚡ 超短线策略",
-                            "🏗️ 投资组合构建",
-                            "📱 平台设置",
-                            "🌍 市场基本面",
-                            "🚀 高级技巧"
-                        ],
-                        descriptions: [
-                            "掌握图表模式、指标和价格行为",
-                            "用经过验证的风险管理策略保护您的资本",
-                            "用高级入场和出场技术完善您的时机把握",
-                            "识别并跟随主导市场趋势进行交易",
-                            "掌握交易的心理游戏以获得持续成功",
-                            "用快节奏的超短线技术快速获利",
-                            "构建平衡且盈利的交易投资组合",
-                            "优化您的交易设置以获得最大效率",
-                            "了解驱动市场变动的力量",
-                            "经验丰富交易者的专业策略"
-                        ]
-                    }
-                };
-               
-                const guideCards = document.querySelectorAll('.guide-card');
-                guideCards.forEach((card, index) => {
-                    const title = card.querySelector('h3');
-                    const description = card.querySelector('p');
-                   
-                    if (title && guides[lang].titles[index]) {
-                        title.textContent = guides[lang].titles[index];
-                    }
-                    if (description && guides[lang].descriptions[index]) {
-                        description.textContent = guides[lang].descriptions[index];
-                    }
-                });
-            }
-           
-            function updateStats(lang) {
-                const stats = {
-                    en: ["Premium Tiers", "Active Members", "Market Analysis", "Trading Community"],
-                    es: ["Niveles Premium", "Miembros Activos", "Análisis de Mercado", "Comunidad de Trading"],
-                    cn: ["高级层级", "活跃会员", "市场分析", "交易社区"]
-                };
-               
-                const statItems = document.querySelectorAll('.stat-item p');
-                statItems.forEach((item, index) => {
-                    if (stats[lang][index]) {
-                        item.textContent = stats[lang][index];
-                    }
-                });
-            }
-           
-            function updateFooter(lang) {
-                const footer = {
-                    en: {
-                        copyright: "© 2025 The Chart Shark. All rights reserved.",
-                        description: "Trading education and community platform",
-                        premium: "Premium Plans",
-                        discord: "Discord"
-                    },
-                    es: {
-                        copyright: "© 2025 El Tiburón del Gráfico. Todos los derechos reservados.",
-                        description: "Plataforma educativa y comunitaria de trading",
-                        premium: "Planes Premium",
-                        discord: "Discord"
-                    },
-                    cn: {
-                        copyright: "© 2025 图表鲨鱼。保留所有权利。",
-                        description: "交易教育和社区平台",
-                        premium: "高级方案",
-                        discord: "Discord"
-                    }
-                };
-               
-                const footerElements = document.querySelectorAll('.footer p');
-                if (footerElements[0]) footerElements[0].textContent = footer[lang].copyright;
-                if (footerElements[1]) footerElements[1].textContent = footer[lang].description;
-               
-                const footerLinks = document.querySelectorAll('.footer a');
-                if (footerLinks[0]) footerLinks[0].textContent = footer[lang].premium;
-                if (footerLinks[1]) footerLinks[1].textContent = footer[lang].discord;
             }
         }
 
@@ -1552,9 +1143,9 @@
             btc: { price: '107565', change: '-0.22' },
             eth: { price: '2519.6', change: '-0.45' },
             spy: { price: '579.11', change: '-0.68' },
-            tsla: { price: '339.39', change: '+1.2' }, // Real TSLA price updated!
-            aapl: { price: '195.34', change: '+0.5' }, // Real AAPL price updated!
-            nvda: { price: '131.31', change: '-0.8' }  // Real NVDA price updated!
+            tsla: { price: '339.39', change: '+1.2' },
+            aapl: { price: '195.34', change: '+0.5' },
+            nvda: { price: '131.31', change: '-0.8' }
         };
 
         // Splash screen functionality
@@ -1622,82 +1213,6 @@
             });
         }
 
-        // Calculator functionality
-        function setupCalculators() {
-            // Position Size Calculator
-            ['accountSize', 'riskPercent', 'stopLoss'].forEach(id => {
-                document.getElementById(id).addEventListener('input', function() {
-                    const accountSize = parseFloat(document.getElementById('accountSize').value) || 0;
-                    const riskPercent = parseFloat(document.getElementById('riskPercent').value) || 0;
-                    const stopLoss = parseFloat(document.getElementById('stopLoss').value) || 0;
-                   
-                    if (accountSize && riskPercent && stopLoss) {
-                        const riskAmount = accountSize * (riskPercent / 100);
-                        const positionSize = riskAmount / stopLoss;
-                        const lang = currentLanguage;
-                        let text;
-                        if (lang === 'es') {
-                            text = `Tamaño de Posición: $${positionSize.toFixed(2)} | Riesgo: $${riskAmount.toFixed(2)}`;
-                        } else if (lang === 'cn') {
-                            text = `仓位大小: $${positionSize.toFixed(2)} | 风险: $${riskAmount.toFixed(2)}`;
-                        } else {
-                            text = `Position Size: $${positionSize.toFixed(2)} | Risk: $${riskAmount.toFixed(2)}`;
-                        }
-                        document.getElementById('positionResult').textContent = text;
-                    }
-                });
-            });
-
-            // Risk/Reward Calculator
-            ['entryPrice', 'stopLossPrice', 'takeProfitPrice'].forEach(id => {
-                document.getElementById(id).addEventListener('input', function() {
-                    const entry = parseFloat(document.getElementById('entryPrice').value) || 0;
-                    const stopLoss = parseFloat(document.getElementById('stopLossPrice').value) || 0;
-                    const takeProfit = parseFloat(document.getElementById('takeProfitPrice').value) || 0;
-                   
-                    if (entry && stopLoss && takeProfit) {
-                        const risk = Math.abs(entry - stopLoss);
-                        const reward = Math.abs(takeProfit - entry);
-                        const ratio = reward / risk;
-                        const lang = currentLanguage;
-                        let text;
-                        if (lang === 'es') {
-                            text = `Ratio Riesgo/Recompensa: 1:${ratio.toFixed(2)} | Riesgo: $${risk.toFixed(2)} | Recompensa: $${reward.toFixed(2)}`;
-                        } else if (lang === 'cn') {
-                            text = `风险/回报比: 1:${ratio.toFixed(2)} | 风险: $${risk.toFixed(2)} | 回报: $${reward.toFixed(2)}`;
-                        } else {
-                            text = `Risk/Reward Ratio: 1:${ratio.toFixed(2)} | Risk: $${risk.toFixed(2)} | Reward: $${reward.toFixed(2)}`;
-                        }
-                        document.getElementById('rrResult').textContent = text;
-                    }
-                });
-            });
-
-            // P&L Calculator
-            ['positionSize', 'buyPrice', 'sellPrice'].forEach(id => {
-                document.getElementById(id).addEventListener('input', function() {
-                    const position = parseFloat(document.getElementById('positionSize').value) || 0;
-                    const buy = parseFloat(document.getElementById('buyPrice').value) || 0;
-                    const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
-                   
-                    if (position && buy && sell) {
-                        const pl = (sell - buy) * position;
-                        const percent = ((sell - buy) / buy) * 100;
-                        const lang = currentLanguage;
-                        let text;
-                        if (lang === 'es') {
-                            text = `G&P: $${pl.toFixed(2)} | ${percent.toFixed(2)}%`;
-                        } else if (lang === 'cn') {
-                            text = `盈亏: $${pl.toFixed(2)} | ${percent.toFixed(2)}%`;
-                        } else {
-                            text = `P&L: $${pl.toFixed(2)} | ${percent.toFixed(2)}%`;
-                        }
-                        document.getElementById('plResult').textContent = text;
-                    }
-                });
-            });
-        }
-
         // Initialize everything
         setTimeout(() => {
             // Initialize language toggle for main content
@@ -1705,29 +1220,27 @@
            
             // Load manual prices
             updateTickerWithManualPrices();
-            setupCalculators();
         }, 9000); // Wait for splash screen to finish
 
         // Console message
         console.log(`
-🔥 CHART SHARK TRADING TICKER 🔥
+🔥 CORE 6 TRADING SYSTEM LOADED 🔥
 
-🌟 NEW: AUTO-CYCLING SPLASH SCREEN LANGUAGES! 🌟
-✨ English → Spanish → Chinese → Repeat ✨
+🎯 PROFESSIONAL INSTITUTIONAL ANALYSIS 🎯
+✨ 6 Critical Factors → Elite Signal Detection ✨
 
-REAL MARKET DATA LOADED ✅
-Updated with current live market prices!
+CORE 6 FACTORS:
+1. ⚡ Pulse - Momentum Detection
+2. 📈 Trend/Bias - Multi-timeframe Alignment  
+3. 🚨 Trap Risk - Divergence Analysis
+4. 🎯 Order Block Proximity - Institutional Zones
+5. 🚀 Momentum Rising - RSI + MACD Confluence
+6. 💪 Strength Grade - Market Conviction Score
 
-Current prices:
-BTC: $${MANUAL_PRICES.btc.price} (${MANUAL_PRICES.btc.change}%)
-ETH: $${MANUAL_PRICES.eth.price} (${MANUAL_PRICES.eth.change}%)
-SPY: $${MANUAL_PRICES.spy.price} (${MANUAL_PRICES.spy.change}%)
-TSLA: $${MANUAL_PRICES.tsla.price} (${MANUAL_PRICES.tsla.change}%)
-AAPL: $${MANUAL_PRICES.aapl.price} (${MANUAL_PRICES.aapl.change}%)
-NVDA: $${MANUAL_PRICES.nvda.price} (${MANUAL_PRICES.nvda.change}%)
+SIGNAL TYPES:
+🟢 Regular → 🔵 Institutional → 🟣 Advanced → ⭐ Elite
 
-🚀 Chart Shark with Auto-Language Splash! 🚀
-🌎 Changes every 2.5 seconds during splash! 🌎
+🚀 Trade Like The Big Money! 🚀
         `);
     </script>
 </body>
