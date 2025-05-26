@@ -719,7 +719,7 @@
                 <div class="plan-period" data-en="per month" data-es="por mes" data-cn="每月">per month</div>
                 <ul class="plan-features">
                     <li data-en="Everything in Starter +" data-es="Todo en Inicial +" data-cn="入门版所有功能 +">Everything in Starter +</li>
-                    <li class="premium-only" data-en="Core 6 Indicator Access" data-es="Acceso al Indicador Core 6" data-cn="Core 6指标访问">Core 6 Indicator Access</li>
+                    <li class="premium-only" data-en="🔥 Core 6 Indicator Access" data-es="🔥 Acceso al Indicador Core 6" data-cn="🔥 Core 6指标访问">🔥 Core 6 Indicator Access</li>
                     <li class="premium-only" data-en="Live Core 6 Trading Calls" data-es="Llamadas Core 6 en Vivo" data-cn="Core 6实时交易电话">Live Core 6 Trading Calls</li>
                     <li class="premium-only" data-en="Institutional Signal Alerts" data-es="Alertas de Señales Institucionales" data-cn="机构信号提醒">Institutional Signal Alerts</li>
                     <li class="premium-only" data-en="Elite Setup Notifications" data-es="Notificaciones de Setups Elite" data-cn="精英设置通知">Elite Setup Notifications</li>
@@ -806,6 +806,11 @@
         <div class="faq-item">
             <div class="faq-question" data-en="What's included in Premium Starter?" data-es="¿Qué incluye Premium Inicial?" data-cn="高级入门版包括什么？">What's included in Premium Starter?</div>
             <div class="faq-answer" data-en="Premium Starter includes basic Discord channel, 5 trading guides, monthly group sessions, basic market updates, and email support." data-es="Premium Inicial incluye canal básico de Discord, 5 guías de trading, sesiones grupales mensuales, actualizaciones básicas del mercado y soporte por email." data-cn="高级入门版包括Discord基础频道、5个交易指南、每月小组会议、基础市场更新和邮件支持。">Premium Starter includes basic Discord channel, 5 trading guides, monthly group sessions, basic market updates, and email support.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" data-en="How does the Core 6 Indicator work?" data-es="¿Cómo funciona el Indicador Core 6?" data-cn="Core 6指标如何工作？">How does the Core 6 Indicator work?</div>
+            <div class="faq-answer" data-en="The Core 6 Indicator is exclusive to Pro Trader members ($500/month) and requires a manual TradingView invite. It analyzes 6 critical market factors in real-time for institutional-grade trading signals." data-es="El Indicador Core 6 es exclusivo para miembros Trader Profesional ($500/mes) y requiere una invitación manual de TradingView. Analiza 6 factores críticos del mercado en tiempo real para señales de trading de grado institucional." data-cn="Core 6指标专属于专业交易者会员（$500/月），需要手动TradingView邀请。它实时分析6个关键市场因素，提供机构级交易信号。">The Core 6 Indicator is exclusive to Pro Trader members ($500/month) and requires a manual TradingView invite. It analyzes 6 critical market factors in real-time for institutional-grade trading signals.</div>
         </div>
         
         <div class="faq-item">
@@ -901,6 +906,44 @@
                         element.textContent = text;
                     }
                 });
+            }
+        }
+
+        // CORE 6 INDICATOR ACCESS FUNCTION
+        function requestIndicatorAccess() {
+            // Very clear about $500 tier requirement
+            const isPro = confirm("🔒 CORE 6 INDICATOR - EXCLUSIVE ACCESS\n\n⚠️ This indicator is ONLY available to:\n✅ Pro Trader members ($500/month)\n❌ NOT available to Premium Starter ($50/month)\n\n💰 Are you a current Pro Trader ($500/month) member?\n\nClick OK if YES, Cancel to upgrade to Pro Trader.");
+            
+            if (!isPro) {
+                alert("❌ ACCESS DENIED\n\nCore 6 Indicator requires Pro Trader membership ($500/month).\n\n📈 Premium Starter ($50/month) does NOT include indicator access.");
+                window.open('#proPayment', '_blank');
+                return;
+            }
+            
+            // Collect TradingView username for Pro Trader members only
+            const tvUsername = prompt("📊 CORE 6 INDICATOR INVITE\n\n✅ Pro Trader Member Verified\n\nPlease enter your exact TradingView username:\n(Case sensitive - must match your profile)");
+            
+            if (tvUsername && tvUsername.trim()) {
+                // Create email with their info
+                const subject = encodeURIComponent("Core 6 Indicator Access - Pro Trader Member");
+                const body = encodeURIComponent(`CORE 6 INDICATOR ACCESS REQUEST:
+
+Membership Tier: Pro Trader ($500/month)
+TradingView Username: ${tvUsername.trim()}
+Request Date: ${new Date().toLocaleDateString()}
+Request Time: ${new Date().toLocaleTimeString()}
+
+Verified Pro Trader member requesting Core 6 Indicator invite.
+
+Please send TradingView invite for exclusive Core 6 Indicator.`);
+                
+                // Open email client with YOUR EMAIL ADDRESS
+                window.open(`mailto:core6tradingsystem@gmail.com?subject=${subject}&body=${body}`, '_blank');
+                
+                // Confirmation message
+                alert(`✅ PRO TRADER ACCESS REQUEST SENT!\n\n👤 TradingView: ${tvUsername.trim()}\n💰 Tier: Pro Trader ($500/month)\n\n📧 Core 6 Indicator invite within 24 hours\n📊 Check TradingView notifications\n🔔 Accept the invite to get access`);
+            } else {
+                alert("Please enter a valid TradingView username to receive your Core 6 Indicator invite.");
             }
         }
 
