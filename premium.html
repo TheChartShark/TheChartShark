@@ -13,8 +13,8 @@
        
         /* LIVE TRADING TICKER */
         .trading-ticker {
-            background: linear-gradient(45deg, #000000, #1a1a1a);
-            border-bottom: 2px solid #00ff88;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
             padding: 0.5rem 0;
             overflow: hidden;
             position: fixed;
@@ -32,38 +32,38 @@
        
         .ticker-item {
             margin-right: 4rem;
-            font-size: 0.9rem;
-            font-weight: bold;
+            font-size: 0.85rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
         }
        
         .ticker-symbol {
-            color: #00d4ff;
+            color: #e2e8f0;
             margin-right: 0.5rem;
         }
        
         .ticker-price {
-            color: #00ff88;
+            color: #3b82f6;
             margin-right: 0.5rem;
         }
        
         .ticker-change {
             margin-left: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
        
         .ticker-change.positive {
-            color: #00ff88;
+            color: #10b981;
         }
        
         .ticker-change.negative {
-            color: #ff6b35;
+            color: #ef4444;
         }
        
         .ticker-status {
             font-size: 0.7rem;
-            color: #00ff88;
+            color: #ef4444;
             margin-left: 0.5rem;
         }
        
@@ -74,21 +74,22 @@
 
         /* MAIN WEBSITE STYLES */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
             line-height: 1.6;
-            padding-top: 40px; /* For ticker */
+            padding-top: 40px;
         }
        
         .header {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
-            top: 40px; /* Below ticker */
+            top: 40px;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.3);
         }
        
         .nav {
@@ -101,9 +102,10 @@
         }
        
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #00ff88;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            letter-spacing: 1px;
         }
        
         .nav-buttons {
@@ -123,120 +125,116 @@
        
         .lang-switch {
             position: relative;
-            width: 90px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            width: 80px;
+            height: 28px;
+            background: rgba(51, 65, 85, 0.5);
+            border-radius: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid rgba(0, 255, 136, 0.3);
-        }
-       
-        .lang-switch:hover {
-            border-color: rgba(0, 255, 136, 0.6);
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.3);
         }
        
         .lang-slider {
             position: absolute;
             top: 2px;
             left: 2px;
-            width: 26px;
-            height: 24px;
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            border-radius: 12px;
+            width: 24px;
+            height: 22px;
+            background: #3b82f6;
+            border-radius: 11px;
             transition: transform 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.65rem;
-            font-weight: bold;
-            color: #000;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: white;
         }
        
         .lang-switch.spanish .lang-slider {
-            transform: translateX(30px);
+            transform: translateX(26px);
         }
        
         .lang-switch.chinese .lang-slider {
-            transform: translateX(60px);
+            transform: translateX(52px);
         }
        
         .lang-labels {
             display: flex;
             align-items: center;
             gap: 0.2rem;
-            font-size: 0.75rem;
-            font-weight: bold;
+            font-size: 0.7rem;
+            font-weight: 500;
         }
        
         .lang-label {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(148, 163, 184, 0.7);
             transition: color 0.3s ease;
             cursor: pointer;
-            min-width: 24px;
+            min-width: 20px;
             text-align: center;
         }
        
         .lang-label.active {
-            color: #00ff88;
-            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+            color: #3b82f6;
         }
        
         .nav-btn {
-            padding: 0.7rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 6px;
             cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
        
         .home-btn {
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            color: #000;
+            background: #3b82f6;
+            color: white;
+            border: 1px solid #3b82f6;
+        }
+       
+        .home-btn:hover {
+            background: #2563eb;
+            border-color: #2563eb;
         }
        
         .discord-btn {
-            background: #5865f2;
-            color: white;
+            background: transparent;
+            color: #94a3b8;
+            border: 1px solid #475569;
         }
        
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        .discord-btn:hover {
+            background: #475569;
+            color: #e2e8f0;
         }
 
         /* PREMIUM PAGE STYLES */
         .premium-hero {
-            padding: 10rem 2rem 4rem;
+            padding: 8rem 2rem 4rem;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
         }
        
         .premium-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-       
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5)); }
-            to { filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.8)); }
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
        
         .premium-subtitle {
-            font-size: 1.5rem;
-            color: #00d4ff;
-            margin-bottom: 3rem;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            font-size: 1.25rem;
+            color: #64748b;
+            margin: 1rem 0 3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         /* PRICING CARDS */
@@ -254,26 +252,25 @@
         }
        
         .pricing-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 8px;
             padding: 3rem 2rem;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(0, 255, 136, 0.3);
+            border: 1px solid rgba(51, 65, 85, 0.5);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
        
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(0, 255, 136, 0.6);
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.8);
         }
        
         .pricing-card.featured {
-            border: 2px solid #ff6b35;
-            transform: scale(1.05);
+            border: 2px solid #3b82f6;
+            transform: scale(1.02);
         }
        
         .pricing-card.featured::before {
@@ -281,31 +278,31 @@
             position: absolute;
             top: 20px;
             right: -30px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: #3b82f6;
             color: white;
             padding: 0.5rem 3rem;
             font-size: 0.8rem;
-            font-weight: bold;
+            font-weight: 600;
             transform: rotate(45deg);
         }
        
         .plan-name {
-            font-size: 2rem;
-            color: #00ff88;
+            font-size: 1.8rem;
+            color: #e2e8f0;
             margin-bottom: 1rem;
-            font-weight: bold;
+            font-weight: 600;
         }
        
         .plan-price {
-            font-size: 3.5rem;
-            color: #ffffff;
+            font-size: 3rem;
+            color: #3b82f6;
             margin-bottom: 0.5rem;
-            font-weight: bold;
+            font-weight: 700;
         }
        
         .plan-period {
-            color: #00d4ff;
-            font-size: 1.1rem;
+            color: #64748b;
+            font-size: 1rem;
             margin-bottom: 2rem;
         }
        
@@ -317,34 +314,37 @@
        
         .plan-features li {
             padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.3);
             display: flex;
             align-items: center;
+            color: #94a3b8;
         }
        
         .plan-features li::before {
-            content: "✅";
+            content: "✓";
             margin-right: 1rem;
             font-size: 1.2rem;
+            color: #10b981;
+            font-weight: bold;
         }
        
         .plan-features li.premium-only {
-            color: #ff6b35;
-            font-weight: bold;
+            color: #e2e8f0;
+            font-weight: 500;
         }
        
         .plan-features li.premium-only::before {
-            content: "🔥";
+            color: #3b82f6;
         }
        
         .cta-button {
-            background: linear-gradient(45deg, #00ff88, #00d4ff);
-            color: #000;
-            padding: 1.2rem 3rem;
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2.5rem;
             border: none;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 500;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
@@ -354,31 +354,97 @@
         }
        
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.4);
+            background: #2563eb;
+            transform: translateY(-1px);
         }
-       
-        .cta-button.premium {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
+
+        /* CORE 6 SYSTEM EXPLANATION */
+        .core6-explanation {
+            padding: 5rem 2rem;
+            background: rgba(15, 23, 42, 0.5);
+            margin: 4rem 0;
         }
-       
-        .cta-button.premium:hover {
-            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        
+        .core6-explanation h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .core6-explanation p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #64748b;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .explanation-card {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .explanation-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.8);
+        }
+        
+        .explanation-card h3 {
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .explanation-card ul {
+            text-align: left;
+            color: #94a3b8;
+            list-style: none;
+        }
+        
+        .explanation-card li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .explanation-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
         }
 
         /* TESTIMONIALS */
         .testimonials {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 4rem 2rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 5rem 2rem;
             margin: 4rem 0;
         }
        
         .testimonials h2 {
             text-align: center;
             font-size: 2.5rem;
-            color: #00ff88;
+            color: #e2e8f0;
             margin-bottom: 3rem;
+            font-weight: 600;
         }
        
         .testimonial-grid {
@@ -390,32 +456,39 @@
         }
        
         .testimonial {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.6);
             padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border-left: 4px solid #00ff88;
+            border-radius: 8px;
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-4px);
+            background: rgba(30, 41, 59, 0.8);
         }
        
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            color: #e2e8f0;
         }
        
         .testimonial-author {
-            color: #00d4ff;
-            font-weight: bold;
+            color: #3b82f6;
+            font-weight: 600;
         }
        
         .testimonial-tier {
-            color: #ff6b35;
+            color: #64748b;
             font-size: 0.9rem;
         }
 
         /* FAQ SECTION */
         .faq-section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -423,49 +496,93 @@
         .faq-section h2 {
             text-align: center;
             font-size: 2.5rem;
-            color: #00d4ff;
+            color: #e2e8f0;
             margin-bottom: 3rem;
+            font-weight: 600;
         }
        
         .faq-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.6);
             margin: 1rem 0;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(59, 130, 246, 0.4);
         }
        
         .faq-question {
             padding: 1.5rem;
             cursor: pointer;
-            font-weight: bold;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+            color: #e2e8f0;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.3);
             transition: background 0.3s ease;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #3b82f6;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(45deg);
         }
        
         .faq-question:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(30, 41, 59, 0.8);
         }
        
         .faq-answer {
             padding: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: #94a3b8;
+            line-height: 1.6;
         }
 
         .footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 2rem;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 3rem 2rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(51, 65, 85, 0.3);
+        }
+        
+        .footer p {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #3b82f6;
         }
        
         .disclaimer {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid #ffc107;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 6px;
             margin: 2rem 0;
-            font-size: 0.9rem;
-            color: #ffc107;
+            font-size: 0.85rem;
+            color: #fbbf24;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 768px) {
@@ -485,13 +602,22 @@
             .nav {
                 flex-direction: column;
                 gap: 1rem;
+                padding: 1rem;
             }
            
             .nav-buttons {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 0.5rem;
+            }
+            
+            .explanation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -504,37 +630,37 @@
                 <span class="ticker-symbol">BTC/USD</span>
                 <span class="ticker-price">$107,565</span>
                 <span class="ticker-change negative">-0.22%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">ETH/USD</span>
                 <span class="ticker-price">$2,519.6</span>
                 <span class="ticker-change negative">-0.45%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">SPY</span>
                 <span class="ticker-price">$579.11</span>
                 <span class="ticker-change negative">-0.68%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">TSLA</span>
                 <span class="ticker-price">$339.39</span>
                 <span class="ticker-change positive">+1.2%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">AAPL</span>
                 <span class="ticker-price">$195.34</span>
                 <span class="ticker-change positive">+0.5%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
             <div class="ticker-item">
                 <span class="ticker-symbol">NVDA</span>
                 <span class="ticker-price">$131.31</span>
                 <span class="ticker-change negative">-0.8%</span>
-                <span class="ticker-status">🔴 LIVE</span>
+                <span class="ticker-status">LIVE</span>
             </div>
         </div>
     </div>
@@ -542,7 +668,9 @@
     <!-- HEADER -->
     <header class="header">
         <nav class="nav">
-            <div class="logo">📈 <span data-en="The Chart Shark" data-es="El Tiburón del Gráfico" data-cn="图表鲨鱼">The Chart Shark</span></div>
+            <div class="logo">
+                <span data-en="The Chart Shark" data-es="El Tiburón del Gráfico" data-cn="图表鲨鱼">The Chart Shark</span>
+            </div>
             <div class="nav-buttons">
                 <div class="language-toggle">
                     <div class="lang-labels">
@@ -555,15 +683,15 @@
                     </div>
                 </div>
                 <a href="index.html" class="nav-btn home-btn" data-en="← Back to Home" data-es="← Volver al Inicio" data-cn="← 返回首页">← Back to Home</a>
-                <a href="https://discord.gg/AQ2S8KxDS5" class="nav-btn discord-btn" data-en="Join Discord" data-es="Únete a Discord" data-cn="加入Discord">Join Discord</a>
+                <a href="https://discord.gg/AQ2S8KxDS5" class="nav-btn discord-btn" data-en="Discord" data-es="Discord" data-cn="Discord">Discord</a>
             </div>
         </nav>
     </header>
 
     <!-- PREMIUM HERO -->
     <section class="premium-hero">
-        <h1 data-en="🔥 CORE 6 PREMIUM ACCESS 🔥" data-es="🔥 ACCESO PREMIUM CORE 6 🔥" data-cn="🔥 CORE 6高级访问 🔥">🔥 CORE 6 PREMIUM ACCESS 🔥</h1>
-        <div class="premium-subtitle" data-en="Get Access to the Core 6 Trading System & My Live Analysis" data-es="Obtén Acceso al Sistema Core 6 Trading y Mi Análisis en Vivo" data-cn="获取Core 6交易系统和我的实时分析">Get Access to the Core 6 Trading System & My Live Analysis</div>
+        <h1 data-en="Core 6 Premium Access" data-es="Acceso Premium Core 6" data-cn="Core 6高级访问">Core 6 Premium Access</h1>
+        <div class="premium-subtitle" data-en="Professional trading system with institutional-grade analysis and live market intelligence" data-es="Sistema de trading profesional con análisis de grado institucional e inteligencia de mercado en vivo" data-cn="专业交易系统，具有机构级分析和实时市场情报">Professional trading system with institutional-grade analysis and live market intelligence</div>
     </section>
 
     <!-- PRICING SECTION -->
@@ -571,143 +699,141 @@
         <div class="pricing-grid">
             <!-- STARTER TIER -->
             <div class="pricing-card featured">
-                <div class="plan-name">Premium Starter</div>
+                <div class="plan-name" data-en="Premium Starter" data-es="Premium Inicial" data-cn="高级入门版">Premium Starter</div>
                 <div class="plan-price">$50</div>
-                <div class="plan-period">per month</div>
+                <div class="plan-period" data-en="per month" data-es="por mes" data-cn="每月">per month</div>
                 <ul class="plan-features">
-                    <li class="premium-only">Basic Discord Channel</li>
-                    <li class="premium-only">5 Trading Guides</li>
-                    <li class="premium-only">Monthly Group Sessions</li>
-                    <li class="premium-only">Basic Market Updates</li>
-                    <li class="premium-only">Email Support</li>
+                    <li class="premium-only" data-en="Basic Discord Channel" data-es="Canal Básico de Discord" data-cn="Discord基础频道">Basic Discord Channel</li>
+                    <li class="premium-only" data-en="5 Trading Guides" data-es="5 Guías de Trading" data-cn="5个交易指南">5 Trading Guides</li>
+                    <li class="premium-only" data-en="Monthly Group Sessions" data-es="Sesiones Grupales Mensuales" data-cn="每月小组会议">Monthly Group Sessions</li>
+                    <li class="premium-only" data-en="Basic Market Updates" data-es="Actualizaciones Básicas del Mercado" data-cn="基础市场更新">Basic Market Updates</li>
+                    <li class="premium-only" data-en="Email Support" data-es="Soporte por Email" data-cn="邮件支持">Email Support</li>
                 </ul>
-                <a href="#" class="cta-button premium" id="starterPayment">Get Starter Access</a>
+                <a href="#" class="cta-button" id="starterPayment" data-en="Get Starter Access" data-es="Obtener Acceso Inicial" data-cn="获取入门版访问">Get Starter Access</a>
             </div>
 
             <!-- PRO TIER -->
             <div class="pricing-card">
-                <div class="plan-name">Pro Trader</div>
+                <div class="plan-name" data-en="Pro Trader" data-es="Trader Profesional" data-cn="专业交易者">Pro Trader</div>
                 <div class="plan-price">$500</div>
-                <div class="plan-period">per month</div>
+                <div class="plan-period" data-en="per month" data-es="por mes" data-cn="每月">per month</div>
                 <ul class="plan-features">
-                    <li>Everything in Starter +</li>
-                    <li class="premium-only">🔥 Core 6 Indicator Access</li>
-                    <li class="premium-only">🔥 Live Core 6 Trading Calls</li>
-                    <li class="premium-only">🔥 Institutional Signal Alerts</li>
-                    <li class="premium-only">🔥 Elite Setup Notifications</li>
-                    <li class="premium-only">1-on-1 Coaching</li>
-                    <li class="premium-only">Custom Trading Plans</li>
-                    <li class="premium-only">Direct Access to Me</li>
-                    <li class="premium-only">VIP Discord Access</li>
+                    <li data-en="Everything in Starter +" data-es="Todo en Inicial +" data-cn="入门版所有功能 +">Everything in Starter +</li>
+                    <li class="premium-only" data-en="Core 6 Indicator Access" data-es="Acceso al Indicador Core 6" data-cn="Core 6指标访问">Core 6 Indicator Access</li>
+                    <li class="premium-only" data-en="Live Core 6 Trading Calls" data-es="Llamadas Core 6 en Vivo" data-cn="Core 6实时交易电话">Live Core 6 Trading Calls</li>
+                    <li class="premium-only" data-en="Institutional Signal Alerts" data-es="Alertas de Señales Institucionales" data-cn="机构信号提醒">Institutional Signal Alerts</li>
+                    <li class="premium-only" data-en="Elite Setup Notifications" data-es="Notificaciones de Setups Elite" data-cn="精英设置通知">Elite Setup Notifications</li>
+                    <li class="premium-only" data-en="1-on-1 Coaching" data-es="Coaching 1-a-1" data-cn="一对一指导">1-on-1 Coaching</li>
+                    <li class="premium-only" data-en="Custom Trading Plans" data-es="Planes de Trading Personalizados" data-cn="定制交易计划">Custom Trading Plans</li>
+                    <li class="premium-only" data-en="Direct Access to Me" data-es="Acceso Directo a Mí" data-cn="直接接触我">Direct Access to Me</li>
+                    <li class="premium-only" data-en="VIP Discord Access" data-es="Acceso VIP a Discord" data-cn="VIP Discord访问">VIP Discord Access</li>
                 </ul>
-                <a href="#" class="cta-button premium" id="proPayment">Get Pro Access</a>
+                <a href="#" class="cta-button" id="proPayment" data-en="Get Pro Access" data-es="Obtener Acceso Pro" data-cn="获取专业版访问">Get Pro Access</a>
             </div>
         </div>
     </section>
 
     <!-- CORE 6 SYSTEM EXPLANATION -->
-    <section class="core6-explanation" style="padding: 4rem 2rem; background: rgba(0, 0, 0, 0.3); margin: 3rem 0;">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2.5rem; color: #00ff88; margin-bottom: 2rem;">What is the Core 6 Trading System?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: rgba(255, 255, 255, 0.9);">
-                The Core 6 is my proprietary trading system that analyzes 6 critical market factors to identify high-probability trade setups with institutional backing.
-            </p>
+    <section class="core6-explanation">
+        <h2 data-en="What is the Core 6 Trading System?" data-es="¿Qué es el Sistema Core 6 Trading?" data-cn="什么是Core 6交易系统？">What is the Core 6 Trading System?</h2>
+        <p data-en="The Core 6 is our proprietary trading system that analyzes 6 critical market factors to identify high-probability trade setups with institutional backing." data-es="El Core 6 es nuestro sistema de trading propietario que analiza 6 factores críticos del mercado para identificar configuraciones de trading de alta probabilidad con respaldo institucional." data-cn="Core 6是我们的专有交易系统，分析6个关键市场因素，以识别具有机构支持的高概率交易设置。">
+            The Core 6 is our proprietary trading system that analyzes 6 critical market factors to identify high-probability trade setups with institutional backing.
+        </p>
+        
+        <div class="explanation-grid">
+            <div class="explanation-card">
+                <h3 data-en="The 6 Core Factors" data-es="Los 6 Factores Core" data-cn="6个核心因素">The 6 Core Factors</h3>
+                <ul>
+                    <li data-en="Pulse - Momentum Detection" data-es="Pulso - Detección de Momentum" data-cn="脉冲 - 动量检测">Pulse - Momentum Detection</li>
+                    <li data-en="Trend/Bias Alignment" data-es="Alineación de Tendencia/Sesgo" data-cn="趋势/偏向对齐">Trend/Bias Alignment</li>
+                    <li data-en="Trap Risk Analysis" data-es="Análisis de Riesgo de Trampas" data-cn="陷阱风险分析">Trap Risk Analysis</li>
+                    <li data-en="Order Block Proximity" data-es="Proximidad de Bloques de Órdenes" data-cn="订单块接近度">Order Block Proximity</li>
+                    <li data-en="Momentum Rising" data-es="Momentum Ascendente" data-cn="动量上升">Momentum Rising</li>
+                    <li data-en="Strength Grade" data-es="Grado de Fuerza" data-cn="强度等级">Strength Grade</li>
+                </ul>
+            </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">🔥 The 6 Core Factors</h3>
-                    <ul style="text-align: left; color: rgba(255, 255, 255, 0.9);">
-                        <li>Pulse - Momentum Detection</li>
-                        <li>Trend/Bias Alignment</li>
-                        <li>Trap Risk Analysis</li>
-                        <li>Order Block Proximity</li>
-                        <li>Momentum Rising</li>
-                        <li>Strength Grade</li>
-                    </ul>
-                </div>
-                
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ff6b35; margin-bottom: 1rem;">⚡ Signal Types</h3>
-                    <ul style="text-align: left; color: rgba(255, 255, 255, 0.9);">
-                        <li><span style="color: #00ff88;">Regular Signals</span> - Standard setups</li>
-                        <li><span style="color: #00d4ff;">Institutional Signals</span> - Big money moves</li>
-                        <li><span style="color: #ff6b35;">Advanced Signals</span> - High probability</li>
-                        <li><span style="color: #fuchsia;">Elite Signals</span> - Massive moves (100+ points)</li>
-                    </ul>
-                </div>
-                
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #fuchsia; margin-bottom: 1rem;">📊 Advanced Features</h3>
-                    <ul style="text-align: left; color: rgba(255, 255, 255, 0.9);">
-                        <li>Divergence Detection</li>
-                        <li>Institutional Footprint Analysis</li>
-                        <li>Liquidity Sweep Detection</li>
-                        <li>Multi-timeframe Confirmation</li>
-                        <li>Risk Management Tools</li>
-                        <li>Position Sizing Calculator</li>
-                    </ul>
-                </div>
+            <div class="explanation-card">
+                <h3 data-en="Signal Types" data-es="Tipos de Señales" data-cn="信号类型">Signal Types</h3>
+                <ul>
+                    <li data-en="Regular Signals - Standard setups" data-es="Señales Regulares - Configuraciones estándar" data-cn="常规信号 - 标准设置">Regular Signals - Standard setups</li>
+                    <li data-en="Institutional Signals - Big money moves" data-es="Señales Institucionales - Movimientos de dinero grande" data-cn="机构信号 - 大资金移动">Institutional Signals - Big money moves</li>
+                    <li data-en="Advanced Signals - High probability" data-es="Señales Avanzadas - Alta probabilidad" data-cn="高级信号 - 高概率">Advanced Signals - High probability</li>
+                    <li data-en="Elite Signals - Massive moves (100+ points)" data-es="Señales Elite - Movimientos masivos (100+ puntos)" data-cn="精英信号 - 大幅移动（100+点）">Elite Signals - Massive moves (100+ points)</li>
+                </ul>
+            </div>
+            
+            <div class="explanation-card">
+                <h3 data-en="Advanced Features" data-es="Características Avanzadas" data-cn="高级功能">Advanced Features</h3>
+                <ul>
+                    <li data-en="Divergence Detection" data-es="Detección de Divergencias" data-cn="背离检测">Divergence Detection</li>
+                    <li data-en="Institutional Footprint Analysis" data-es="Análisis de Huella Institucional" data-cn="机构足迹分析">Institutional Footprint Analysis</li>
+                    <li data-en="Liquidity Sweep Detection" data-es="Detección de Barrido de Liquidez" data-cn="流动性扫描检测">Liquidity Sweep Detection</li>
+                    <li data-en="Multi-timeframe Confirmation" data-es="Confirmación Multi-marco temporal" data-cn="多时间框架确认">Multi-timeframe Confirmation</li>
+                    <li data-en="Risk Management Tools" data-es="Herramientas de Gestión de Riesgo" data-cn="风险管理工具">Risk Management Tools</li>
+                    <li data-en="Position Sizing Calculator" data-es="Calculadora de Tamaño de Posición" data-cn="头寸大小计算器">Position Sizing Calculator</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials">
-        <h2>What Our Premium Members Say</h2>
+        <h2 data-en="What Our Premium Members Say" data-es="Lo Que Dicen Nuestros Miembros Premium" data-cn="我们的高级会员评价">What Our Premium Members Say</h2>
         <div class="testimonial-grid">
             <div class="testimonial">
-                <div class="testimonial-text">"The Core 6 system completely changed my trading approach. The institutional signals are incredible!"</div>
+                <div class="testimonial-text" data-en=""The Core 6 system completely changed my trading approach. The institutional signals are incredible!"" data-es=""El sistema Core 6 cambió completamente mi enfoque de trading. ¡Las señales institucionales son increíbles!"" data-cn=""Core 6系统彻底改变了我的交易方法。机构信号令人难以置信！"">"The Core 6 system completely changed my trading approach. The institutional signals are incredible!"</div>
                 <div class="testimonial-author">Sarah K.</div>
-                <div class="testimonial-tier">Premium Starter Member</div>
+                <div class="testimonial-tier" data-en="Premium Starter Member" data-es="Miembro Premium Inicial" data-cn="高级入门版会员">Premium Starter Member</div>
             </div>
             <div class="testimonial">
-                <div class="testimonial-text">"Getting live Core 6 calls and elite setup alerts is worth every penny. Best trading decision I've made."</div>
+                <div class="testimonial-text" data-en=""Getting live Core 6 calls and elite setup alerts is worth every penny. Best trading decision I've made."" data-es=""Recibir llamadas Core 6 en vivo y alertas de setups elite vale cada centavo. La mejor decisión de trading que he tomado."" data-cn=""获得Core 6实时电话和精英设置提醒物超所值。这是我做过的最好的交易决定。"">"Getting live Core 6 calls and elite setup alerts is worth every penny. Best trading decision I've made."</div>
                 <div class="testimonial-author">Mike R.</div>
-                <div class="testimonial-tier">Pro Trader Member</div>
+                <div class="testimonial-tier" data-en="Pro Trader Member" data-es="Miembro Trader Profesional" data-cn="专业交易者会员">Pro Trader Member</div>
             </div>
             <div class="testimonial">
-                <div class="testimonial-text">"The 1-on-1 coaching on Core 6 strategies took my trading to the next level."</div>
+                <div class="testimonial-text" data-en=""The 1-on-1 coaching on Core 6 strategies took my trading to the next level."" data-es=""El coaching 1-a-1 sobre estrategias Core 6 llevó mi trading al siguiente nivel."" data-cn=""关于Core 6策略的一对一指导将我的交易提升到了新水平。"">"The 1-on-1 coaching on Core 6 strategies took my trading to the next level."</div>
                 <div class="testimonial-author">James T.</div>
-                <div class="testimonial-tier">Pro Trader Member</div>
+                <div class="testimonial-tier" data-en="Pro Trader Member" data-es="Miembro Trader Profesional" data-cn="专业交易者会员">Pro Trader Member</div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
     <section class="faq-section">
-        <h2>Frequently Asked Questions</h2>
+        <h2 data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes" data-cn="常见问题">Frequently Asked Questions</h2>
         
         <div class="faq-item">
-            <div class="faq-question">What's included in Premium Starter?</div>
-            <div class="faq-answer">Premium Starter includes basic Discord channel, 5 trading guides, monthly group sessions, basic market updates, and email support.</div>
+            <div class="faq-question" data-en="What's included in Premium Starter?" data-es="¿Qué incluye Premium Inicial?" data-cn="高级入门版包括什么？">What's included in Premium Starter?</div>
+            <div class="faq-answer" data-en="Premium Starter includes basic Discord channel, 5 trading guides, monthly group sessions, basic market updates, and email support." data-es="Premium Inicial incluye canal básico de Discord, 5 guías de trading, sesiones grupales mensuales, actualizaciones básicas del mercado y soporte por email." data-cn="高级入门版包括Discord基础频道、5个交易指南、每月小组会议、基础市场更新和邮件支持。">Premium Starter includes basic Discord channel, 5 trading guides, monthly group sessions, basic market updates, and email support.</div>
         </div>
         
         <div class="faq-item">
-            <div class="faq-question">How does the 1-on-1 coaching work?</div>
-            <div class="faq-answer">Pro Trader members get 1-on-1 video calls with me to review portfolios, discuss strategies, and create custom plans.</div>
+            <div class="faq-question" data-en="How does the 1-on-1 coaching work?" data-es="¿Cómo funciona el coaching 1-a-1?" data-cn="一对一指导如何运作？">How does the 1-on-1 coaching work?</div>
+            <div class="faq-answer" data-en="Pro Trader members get 1-on-1 video calls with me to review portfolios, discuss strategies, and create custom plans." data-es="Los miembros Trader Profesional obtienen llamadas de video 1-a-1 conmigo para revisar portafolios, discutir estrategias y crear planes personalizados." data-cn="专业交易者会员与我进行一对一视频通话，审查投资组合，讨论策略，并制定定制计划。">Pro Trader members get 1-on-1 video calls with me to review portfolios, discuss strategies, and create custom plans.</div>
         </div>
         
         <div class="faq-item">
-            <div class="faq-question">Can I cancel anytime?</div>
-            <div class="faq-answer">Yes! You can cancel your subscription at any time. No long-term contracts or commitments required.</div>
+            <div class="faq-question" data-en="Can I cancel anytime?" data-es="¿Puedo cancelar en cualquier momento?" data-cn="我可以随时取消吗？">Can I cancel anytime?</div>
+            <div class="faq-answer" data-en="Yes! You can cancel your subscription at any time. No long-term contracts or commitments required." data-es="¡Sí! Puedes cancelar tu suscripción en cualquier momento. No se requieren contratos a largo plazo o compromisos." data-cn="是的！您可以随时取消订阅。无需长期合同或承诺。">Yes! You can cancel your subscription at any time. No long-term contracts or commitments required.</div>
         </div>
         
         <div class="faq-item">
-            <div class="faq-question">What payment methods do you accept?</div>
-            <div class="faq-answer">We accept all major credit cards, debit cards, and digital payment methods through our secure Square payment processor.</div>
+            <div class="faq-question" data-en="What payment methods do you accept?" data-es="¿Qué métodos de pago aceptan?" data-cn="你们接受什么付款方式？">What payment methods do you accept?</div>
+            <div class="faq-answer" data-en="We accept all major credit cards, debit cards, and digital payment methods through our secure Square payment processor." data-es="Aceptamos todas las tarjetas de crédito principales, tarjetas de débito y métodos de pago digitales a través de nuestro procesador seguro Square." data-cn="我们通过安全的Square支付处理器接受所有主要信用卡、借记卡和数字支付方式。">We accept all major credit cards, debit cards, and digital payment methods through our secure Square payment processor.</div>
         </div>
     </section>
 
     <div class="disclaimer">
-        <strong>Risk Disclaimer:</strong> Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose. Premium membership provides educational content and community access, not guaranteed profits.
+        <strong data-en="Risk Disclaimer:" data-es="Aviso de Riesgo:" data-cn="风险提示：">Risk Disclaimer:</strong> <span data-en="Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose. Premium membership provides educational content and community access, not guaranteed profits." data-es="El trading implica un riesgo sustancial y no es adecuado para todos los inversores. El rendimiento pasado no garantiza resultados futuros. Solo opera con dinero que puedas permitirte perder. La membresía premium proporciona contenido educativo y acceso a la comunidad, no ganancias garantizadas." data-cn="交易涉及重大风险，不适合所有投资者。过往表现不能保证未来结果。只能用您承受得起损失的资金进行交易。高级会员提供教育内容和社区访问，不保证利润。">Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose. Premium membership provides educational content and community access, not guaranteed profits.</span>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 The Chart Shark. All rights reserved.</p>
-        <p>Premium Trading Education & Community Platform</p>
-        <div style="margin-top: 1rem;">
-            <a href="index.html" style="color: #00ff88; text-decoration: none; margin: 0 1rem;">Home</a>
-            <a href="https://discord.gg/AQ2S8KxDS5" style="color: #00d4ff; text-decoration: none; margin: 0 1rem;">Discord</a>
+        <p data-en="© 2025 The Chart Shark - Core 6 Trading System. All rights reserved." data-es="© 2025 El Tiburón del Gráfico - Sistema Core 6 Trading. Todos los derechos reservados." data-cn="© 2025 图表鲨鱼 - Core 6交易系统。保留所有权利。">&copy; 2025 The Chart Shark - Core 6 Trading System. All rights reserved.</p>
+        <p data-en="Professional institutional trading education and analysis" data-es="Educación y análisis de trading institucional profesional" data-cn="专业机构交易教育和分析">Professional institutional trading education and analysis</p>
+        <div style="margin-top: 1.5rem;">
+            <a href="index.html" data-en="Home" data-es="Inicio" data-cn="首页">Home</a>
+            <a href="https://discord.gg/AQ2S8KxDS5">Discord Community</a>
         </div>
     </footer>
 
@@ -775,271 +901,6 @@
                         element.textContent = text;
                     }
                 });
-               
-                // Update pricing content
-                updatePricingContent(lang);
-                
-                // Update testimonials
-                updateTestimonials(lang);
-                
-                // Update FAQ
-                updateFAQ(lang);
-                
-                // Update other sections
-                updateOtherSections(lang);
-            }
-            
-            function updatePricingContent(lang) {
-                const pricing = {
-                    en: {
-                        starterTitle: "Premium Starter",
-                        proTitle: "Pro Trader",
-                        perMonth: "per month",
-                        starterFeatures: [
-                            "Basic Discord Channel",
-                            "5 Trading Guides", 
-                            "Monthly Group Sessions",
-                            "Basic Market Updates",
-                            "Email Support"
-                        ],
-                        proFeatures: [
-                            "Everything in Starter +",
-                            "🔥 Core 6 Indicator Access",
-                            "🔥 Live Core 6 Trading Calls",
-                            "🔥 Institutional Signal Alerts", 
-                            "🔥 Elite Setup Notifications",
-                            "1-on-1 Coaching",
-                            "Custom Trading Plans",
-                            "Direct Access to Me",
-                            "VIP Discord Access"
-                        ],
-                        starterBtn: "Get Starter Access",
-                        proBtn: "Get Pro Access"
-                    },
-                    es: {
-                        starterTitle: "Premium Inicial",
-                        proTitle: "Trader Profesional", 
-                        perMonth: "por mes",
-                        starterFeatures: [
-                            "Canal Básico de Discord",
-                            "5 Guías de Trading",
-                            "Sesiones Grupales Mensuales", 
-                            "Actualizaciones Básicas del Mercado",
-                            "Soporte por Email"
-                        ],
-                        proFeatures: [
-                            "Todo en Inicial +",
-                            "🔥 Acceso al Indicador Core 6",
-                            "🔥 Llamadas Core 6 en Vivo",
-                            "🔥 Alertas de Señales Institucionales",
-                            "🔥 Notificaciones de Setups Elite", 
-                            "Coaching 1-a-1",
-                            "Planes de Trading Personalizados",
-                            "Acceso Directo a Mí",
-                            "Acceso VIP a Discord"
-                        ],
-                        starterBtn: "Obtener Acceso Inicial",
-                        proBtn: "Obtener Acceso Pro"
-                    },
-                    cn: {
-                        starterTitle: "高级入门版",
-                        proTitle: "专业交易者",
-                        perMonth: "每月",
-                        starterFeatures: [
-                            "Discord基础频道",
-                            "5个交易指南",
-                            "每月小组会议",
-                            "基础市场更新", 
-                            "邮件支持"
-                        ],
-                        proFeatures: [
-                            "入门版所有功能 +",
-                            "🔥 Core 6指标访问",
-                            "🔥 Core 6实时交易电话",
-                            "🔥 机构信号提醒",
-                            "🔥 精英设置通知",
-                            "一对一指导",
-                            "定制交易计划", 
-                            "直接接触我",
-                            "VIP Discord访问"
-                        ],
-                        starterBtn: "获取入门版访问",
-                        proBtn: "获取专业版访问"
-                    }
-                };
-                
-                // Update plan titles
-                const starterTitle = document.querySelector('.pricing-card:first-child .plan-name');
-                const proTitle = document.querySelector('.pricing-card:last-child .plan-name');
-                if (starterTitle) starterTitle.textContent = pricing[lang].starterTitle;
-                if (proTitle) proTitle.textContent = pricing[lang].proTitle;
-                
-                // Update "per month" text
-                const periodTexts = document.querySelectorAll('.plan-period');
-                periodTexts.forEach(period => {
-                    period.textContent = pricing[lang].perMonth;
-                });
-                
-                // Update starter features
-                const starterFeatures = document.querySelectorAll('.pricing-card:first-child .plan-features li');
-                starterFeatures.forEach((li, index) => {
-                    if (pricing[lang].starterFeatures[index]) {
-                        li.textContent = pricing[lang].starterFeatures[index];
-                        li.classList.add('premium-only');
-                    }
-                });
-                
-                // Update pro features
-                const proFeatures = document.querySelectorAll('.pricing-card:last-child .plan-features li');
-                proFeatures.forEach((li, index) => {
-                    if (pricing[lang].proFeatures[index]) {
-                        li.textContent = pricing[lang].proFeatures[index];
-                        if (index > 0) li.classList.add('premium-only');
-                    }
-                });
-                
-                // Update buttons
-                const starterBtn = document.getElementById('starterPayment');
-                const proBtn = document.getElementById('proPayment');
-                if (starterBtn) starterBtn.textContent = pricing[lang].starterBtn;
-                if (proBtn) proBtn.textContent = pricing[lang].proBtn;
-            }
-            
-            function updateTestimonials(lang) {
-                const testimonials = {
-                    en: {
-                        heading: "What Our Premium Members Say",
-                        quotes: [
-                            "The Core 6 system completely changed my trading approach. The institutional signals are incredible!",
-                            "Getting live Core 6 calls and elite setup alerts is worth every penny. Best trading decision I've made.",
-                            "The 1-on-1 coaching on Core 6 strategies took my trading to the next level."
-                        ]
-                    },
-                    es: {
-                        heading: "Lo Que Dicen Nuestros Miembros Premium",
-                        quotes: [
-                            "El sistema Core 6 cambió completamente mi enfoque de trading. ¡Las señales institucionales son increíbles!",
-                            "Recibir llamadas Core 6 en vivo y alertas de setups elite vale cada centavo. La mejor decisión de trading que he tomado.",
-                            "El coaching 1-a-1 sobre estrategias Core 6 llevó mi trading al siguiente nivel."
-                        ]
-                    },
-                    cn: {
-                        heading: "我们的高级会员评价",
-                        quotes: [
-                            "Core 6系统彻底改变了我的交易方法。机构信号令人难以置信！",
-                            "获得Core 6实时电话和精英设置提醒物超所值。这是我做过的最好的交易决定。",
-                            "关于Core 6策略的一对一指导将我的交易提升到了新水平。"
-                        ]
-                    }
-                };
-                
-                const heading = document.querySelector('.testimonials h2');
-                if (heading) heading.textContent = testimonials[lang].heading;
-                
-                const quotes = document.querySelectorAll('.testimonial-text');
-                quotes.forEach((quote, index) => {
-                    if (testimonials[lang].quotes[index]) {
-                        quote.textContent = `"${testimonials[lang].quotes[index]}"`;
-                    }
-                });
-            }
-            
-            function updateFAQ(lang) {
-                const faq = {
-                    en: {
-                        heading: "Frequently Asked Questions",
-                        questions: [
-                            "What's included in Premium Starter?",
-                            "How does the 1-on-1 coaching work?", 
-                            "Can I cancel anytime?",
-                            "What payment methods do you accept?"
-                        ],
-                        answers: [
-                            "Premium Starter includes basic Discord channel, 5 trading guides, monthly group sessions, basic market updates, and email support.",
-                            "Pro Trader members get 1-on-1 video calls with me to review portfolios, discuss strategies, and create custom plans.",
-                            "Yes! You can cancel your subscription at any time. No long-term contracts or commitments required.",
-                            "We accept all major credit cards, debit cards, and digital payment methods through our secure Square payment processor."
-                        ]
-                    },
-                    es: {
-                        heading: "Preguntas Frecuentes",
-                        questions: [
-                            "¿Qué incluye Premium Inicial?",
-                            "¿Cómo funciona el coaching 1-a-1?",
-                            "¿Puedo cancelar en cualquier momento?", 
-                            "¿Qué métodos de pago aceptan?"
-                        ],
-                        answers: [
-                            "Premium Inicial incluye canal básico de Discord, 5 guías de trading, sesiones grupales mensuales, actualizaciones básicas del mercado y soporte por email.",
-                            "Los miembros Trader Profesional obtienen llamadas de video 1-a-1 conmigo para revisar portafolios, discutir estrategias y crear planes personalizados.",
-                            "¡Sí! Puedes cancelar tu suscripción en cualquier momento. No se requieren contratos a largo plazo o compromisos.",
-                            "Aceptamos todas las tarjetas de crédito principales, tarjetas de débito y métodos de pago digitales a través de nuestro procesador seguro Square."
-                        ]
-                    },
-                    cn: {
-                        heading: "常见问题",
-                        questions: [
-                            "高级入门版包括什么？",
-                            "一对一指导如何运作？",
-                            "我可以随时取消吗？",
-                            "你们接受什么付款方式？"
-                        ],
-                        answers: [
-                            "高级入门版包括Discord基础频道、5个交易指南、每月小组会议、基础市场更新和邮件支持。",
-                            "专业交易者会员与我进行一对一视频通话，审查投资组合，讨论策略，并制定定制计划。",
-                            "是的！您可以随时取消订阅。无需长期合同或承诺。",
-                            "我们通过安全的Square支付处理器接受所有主要信用卡、借记卡和数字支付方式。"
-                        ]
-                    }
-                };
-                
-                const heading = document.querySelector('.faq-section h2');
-                if (heading) heading.textContent = faq[lang].heading;
-                
-                const questions = document.querySelectorAll('.faq-question');
-                const answers = document.querySelectorAll('.faq-answer');
-                
-                questions.forEach((question, index) => {
-                    if (faq[lang].questions[index]) {
-                        question.textContent = faq[lang].questions[index];
-                    }
-                });
-                
-                answers.forEach((answer, index) => {
-                    if (faq[lang].answers[index]) {
-                        answer.textContent = faq[lang].answers[index];
-                    }
-                });
-            }
-            
-            function updateOtherSections(lang) {
-                const content = {
-                    en: {
-                        disclaimer: "Risk Disclaimer:",
-                        disclaimerText: "Trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results. Only trade with money you can afford to lose. Premium membership provides educational content and community access, not guaranteed profits.",
-                        footerDesc: "Premium Trading Education & Community Platform"
-                    },
-                    es: {
-                        disclaimer: "Aviso de Riesgo:",
-                        disclaimerText: "El trading implica un riesgo sustancial y no es adecuado para todos los inversores. El rendimiento pasado no garantiza resultados futuros. Solo opera con dinero que puedas permitirte perder. La membresía premium proporciona contenido educativo y acceso a la comunidad, no ganancias garantizadas.",
-                        footerDesc: "Plataforma Premium de Educación y Comunidad de Trading"
-                    },
-                    cn: {
-                        disclaimer: "风险提示：",
-                        disclaimerText: "交易涉及重大风险，不适合所有投资者。过往表现不能保证未来结果。只能用您承受得起损失的资金进行交易。高级会员提供教育内容和社区访问，不保证利润。",
-                        footerDesc: "高级交易教育和社区平台"
-                    }
-                };
-                
-                // Update disclaimer
-                const disclaimerStrong = document.querySelector('.disclaimer strong');
-                const disclaimerSpan = document.querySelector('.disclaimer').childNodes[2];
-                if (disclaimerStrong) disclaimerStrong.textContent = content[lang].disclaimer;
-                if (disclaimerSpan) disclaimerSpan.textContent = ` ${content[lang].disclaimerText}`;
-                
-                // Update footer
-                const footerDesc = document.querySelectorAll('.footer p')[1];
-                if (footerDesc) footerDesc.textContent = content[lang].footerDesc;
             }
         }
 
@@ -1048,7 +909,7 @@
             initLanguageToggle();
         });
 
-        // Add click handlers for payment buttons - you'll replace these URLs with your Square links
+        // Add click handlers for payment buttons
         document.getElementById('starterPayment').addEventListener('click', function(e) {
             e.preventDefault();
             // $50/month Premium Starter plan
@@ -1061,20 +922,24 @@
             window.open('https://square.link/u/x81vNxI8?src=sheet', '_blank');
         });
 
-        // Simple FAQ toggle functionality
+        // FAQ toggle functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const answer = this.nextElementSibling;
                 const isVisible = answer.style.display === 'block';
                 
-                // Hide all answers
+                // Hide all answers and remove active class
                 document.querySelectorAll('.faq-answer').forEach(ans => {
                     ans.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
                 });
                 
                 // Show clicked answer if it wasn't visible
                 if (!isVisible) {
                     answer.style.display = 'block';
+                    this.classList.add('active');
                 }
             });
         });
@@ -1084,7 +949,7 @@
             answer.style.display = 'none';
         });
 
-        console.log('🔥 CORE 6 PREMIUM PAGE LOADED 🔥\nCore 6 indicator EXCLUSIVE to $500/month tier!\nSquare payments connected!');
+        console.log('Core 6 Trading System - Professional Premium Platform');
     </script>
 </body>
 </html>
