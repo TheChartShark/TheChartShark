@@ -549,6 +549,123 @@
             line-height: 1.6;
         }
 
+        /* FEATURES SECTION */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+       
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+       
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+       
+        .feature-card {
+            background: rgba(30, 41, 59, 0.4);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: all 0.3s ease;
+        }
+       
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        /* SPECIAL STYLING FOR COACHING CARD WITH CALENDAR */
+        .feature-card.coaching-active {
+            transform: scale(1.02);
+            border-color: rgba(59, 130, 246, 0.6);
+            background: rgba(30, 41, 59, 0.9);
+        }
+       
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+            font-size: 1.2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* CALENDLY EMBED STYLING */
+        #calendlyContainer {
+            animation: slideDown 0.3s ease-out;
+            margin-top: 1.5rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .calendly-wrapper {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-calendly {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            z-index: 10;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .close-calendly:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
         .footer {
             background: rgba(15, 23, 42, 0.9);
             padding: 3rem 2rem 2rem;
@@ -618,6 +735,14 @@
             
             .testimonial-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calendly-wrapper iframe {
+                height: 400px;
             }
         }
     </style>
@@ -767,6 +892,63 @@
                 <h3 data-en="🔥 Core 6 Indicator" data-es="🔥 Indicador Core 6" data-cn="🔥 Core 6指标">🔥 Core 6 Indicator</h3>
                 <p style="color: #94a3b8; margin-bottom: 1.5rem;" data-en="Exclusive TradingView indicator for Pro Trader members only ($500/month). Manual invite required." data-es="Indicador exclusivo de TradingView solo para miembros Trader Profesional ($500/mes). Se requiere invitación manual." data-cn="专属TradingView指标，仅限专业交易者会员（$500/月）。需要手动邀请。">Exclusive TradingView indicator for Pro Trader members only ($500/month). Manual invite required.</p>
                 <button onclick="requestIndicatorAccess()" class="cta-button" style="width: 100%; margin: 0;" data-en="🚀 Get Core 6 Indicator" data-es="🚀 Obtener Indicador Core 6" data-cn="🚀 获取Core 6指标">🚀 Get Core 6 Indicator</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <h2 data-en="System Components" data-es="Componentes del Sistema" data-cn="系统组件">System Components</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 data-en="Core 6 Indicator" data-es="Indicador Core 6" data-cn="Core 6指标">Core 6 Indicator</h3>
+                <p data-en="Professional TradingView indicator providing real-time analysis of all six factors with institutional-grade precision and customizable parameters." data-es="Indicador profesional de TradingView que proporciona análisis en tiempo real de los seis factores con precisión de grado institucional y parámetros personalizables." data-cn="专业TradingView指标，以机构级精度和可定制参数实时分析所有六个因素。">Professional TradingView indicator providing real-time analysis of all six factors with institutional-grade precision and customizable parameters.</p>
+                <button onclick="requestIndicatorAccess()" class="cta-button" data-en="Get Indicator" data-es="Obtener Indicador" data-cn="获取指标">Get Indicator</button>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3 data-en="Training Materials" data-es="Materiales de Entrenamiento" data-cn="培训材料">Training Materials</h3>
+                <p data-en="Comprehensive video tutorials and documentation covering all aspects of the Core 6 system implementation and optimization strategies." data-es="Tutoriales en video integrales y documentación que cubren todos los aspectos de la implementación del sistema Core 6 y estrategias de optimización." data-cn="全面的视频教程和文档，涵盖Core 6系统实施和优化策略的所有方面。">Comprehensive video tutorials and documentation covering all aspects of the Core 6 system implementation and optimization strategies.</p>
+                <a href="#proPayment" class="cta-button" data-en="Learn System" data-es="Aprender Sistema" data-cn="学习系统">Learn System</a>
+            </div>
+
+            <div class="feature-card" id="personalCoachingCard">
+                <div class="feature-icon">👨‍💼</div>
+                <h3 data-en="Personal Coaching" data-es="Coaching Personal" data-cn="个人指导">Personal Coaching</h3>
+                <p data-en="One-on-one training sessions focused on mastering the Core 6 methodology and developing institutional-level trading expertise." data-es="Sesiones de entrenamiento uno a uno enfocadas en dominar la metodología Core 6 y desarrollar experiencia de trading de nivel institucional." data-cn="专注于掌握Core 6方法论和发展机构级交易专业知识的一对一培训课程。">One-on-one training sessions focused on mastering the Core 6 methodology and developing institutional-level trading expertise.</p>
+                
+                <!-- Calendar container (hidden initially) -->
+                <div id="calendlyContainer" style="display: none;">
+                    <div class="calendly-wrapper">
+                        <button class="close-calendly" onclick="closeCalendlyEmbed()">&times;</button>
+                        <iframe src="https://calendly.com/core6tradingsystem/30min" width="100%" height="500" frameborder="0" style="border-radius: 8px;"></iframe>
+                    </div>
+                </div>
+                
+                <button onclick="bookCoachingSession()" class="cta-button" id="bookingBtn" data-en="Book Session" data-es="Reservar Sesión" data-cn="预约会话">Book Session</button>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3 data-en="Advanced Analytics" data-es="Análisis Avanzado" data-cn="高级分析">Advanced Analytics</h3>
+                <p data-en="Hedge fund-level features including Kelly Criterion position sizing, liquidity analysis, and auction market theory implementation." data-es="Características de nivel de hedge fund incluyendo dimensionamiento de posición Kelly Criterion, análisis de liquidez e implementación de teoría de mercado de subasta." data-cn="对冲基金级功能，包括凯利准则头寸大小调整、流动性分析和拍卖市场理论实施。">Hedge fund-level features including Kelly Criterion position sizing, liquidity analysis, and auction market theory implementation.</p>
+                <a href="#proPayment" class="cta-button" data-en="Learn More" data-es="Aprender Más" data-cn="了解更多">Learn More</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3 data-en="Elite Identification" data-es="Identificación Elite" data-cn="精英识别">Elite Identification</h3>
+                <p data-en="Advanced pattern recognition training for identifying elite setups with significant move potential using sophisticated Core 6 configurations." data-es="Entrenamiento de reconocimiento de patrones avanzado para identificar configuraciones elite con potencial de movimiento significativo usando configuraciones sofisticadas de Core 6." data-cn="使用复杂的Core 6配置识别具有重大移动潜力的精英设置的高级模式识别训练。">Advanced pattern recognition training for identifying elite setups with significant move potential using sophisticated Core 6 configurations.</p>
+                <a href="#proPayment" class="cta-button" data-en="Master Patterns" data-es="Dominar Patrones" data-cn="掌握模式">Master Patterns</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 data-en="Specialized Modes" data-es="Modos Especializados" data-cn="专业模式">Specialized Modes</h3>
+                <p data-en="Optimized parameters and risk management protocols specifically designed for divergence trading and mean reversion strategies." data-es="Parámetros optimizados y protocolos de gestión de riesgo específicamente diseñados para trading de divergencia y estrategias de reversión a la media." data-cn="专门为背离交易和均值回归策略设计的优化参数和风险管理协议。">Optimized parameters and risk management protocols specifically designed for divergence trading and mean reversion strategies.</p>
+                <a href="#proPayment" class="cta-button" data-en="Activate Modes" data-es="Activar Modos" data-cn="激活模式">Activate Modes</a>
             </div>
         </div>
     </section>
@@ -941,7 +1123,7 @@ Please send TradingView invite for exclusive Core 6 Indicator.`);
             }
         }
 
-        // PERSONAL COACHING BOOKING FUNCTION
+        // PERSONAL COACHING BOOKING FUNCTION - EMBEDDED VERSION
         function bookCoachingSession() {
             // Verify Pro Trader membership first
             const isPro = confirm("🎯 CORE 6 PERSONAL COACHING\n\n⚠️ EXCLUSIVE ACCESS:\n✅ Pro Trader members ($500/month) ONLY\n❌ NOT available to Premium Starter ($50/month)\n\n💰 Are you a current Pro Trader member?\n\nClick OK if YES, Cancel to upgrade to Pro Trader.");
@@ -953,11 +1135,27 @@ Please send TradingView invite for exclusive Core 6 Indicator.`);
                 return;
             }
             
-            // Open Calendly booking page for verified Pro Trader members
-            window.open('https://calendly.com/core6tradingsystem/30min', '_blank');
+            // Show Calendly embedded in the card
+            document.getElementById('calendlyContainer').style.display = 'block';
+            document.getElementById('bookingBtn').textContent = 'Calendar Loading...';
+            document.getElementById('bookingBtn').style.opacity = '0.5';
+            document.getElementById('personalCoachingCard').classList.add('coaching-active');
+            
+            // Scroll to the card so user can see calendar
+            document.getElementById('personalCoachingCard').scrollIntoView({ behavior: 'smooth' });
             
             // Success message
-            alert("✅ OPENING CORE 6 COACHING CALENDAR\n\n📅 Select your preferred time slot\n🎯 30-minute focused coaching session\n⏰ Perfect duration for targeted Core 6 training\n🔗 Zoom link will be sent automatically\n\nLooking forward to our session! 🚀");
+            setTimeout(() => {
+                alert("✅ COACHING CALENDAR LOADED\n\n📅 Select your preferred time slot below\n🎯 30-minute focused Core 6 session\n🔗 Zoom link sent automatically after booking");
+            }, 1000);
+        }
+
+        // Function to close embedded calendar
+        function closeCalendlyEmbed() {
+            document.getElementById('calendlyContainer').style.display = 'none';
+            document.getElementById('bookingBtn').textContent = 'Book Session';
+            document.getElementById('bookingBtn').style.opacity = '1';
+            document.getElementById('personalCoachingCard').classList.remove('coaching-active');
         }
 
         // Initialize language toggle when page loads
@@ -1005,7 +1203,7 @@ Please send TradingView invite for exclusive Core 6 Indicator.`);
             answer.style.display = 'none';
         });
 
-        console.log('Core 6 Trading System - Professional Premium Platform with Calendly Integration');
+        console.log('Core 6 Trading System - Professional Premium Platform with Embedded Calendly');
     </script>
 </body>
 </html>
