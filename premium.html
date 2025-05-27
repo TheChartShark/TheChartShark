@@ -723,7 +723,7 @@
                     <li class="premium-only" data-en="Live Core 6 Trading Calls" data-es="Llamadas Core 6 en Vivo" data-cn="Core 6实时交易电话">Live Core 6 Trading Calls</li>
                     <li class="premium-only" data-en="Institutional Signal Alerts" data-es="Alertas de Señales Institucionales" data-cn="机构信号提醒">Institutional Signal Alerts</li>
                     <li class="premium-only" data-en="Elite Setup Notifications" data-es="Notificaciones de Setups Elite" data-cn="精英设置通知">Elite Setup Notifications</li>
-                    <li class="premium-only" data-en="1-on-1 Coaching" data-es="Coaching 1-a-1" data-cn="一对一指导">1-on-1 Coaching</li>
+                    <li class="premium-only" data-en="1-on-1 Coaching (30 min)" data-es="Coaching 1-a-1 (30 min)" data-cn="一对一指导（30分钟）">1-on-1 Coaching (30 min)</li>
                     <li class="premium-only" data-en="Custom Trading Plans" data-es="Planes de Trading Personalizados" data-cn="定制交易计划">Custom Trading Plans</li>
                     <li class="premium-only" data-en="Direct Access to Me" data-es="Acceso Directo a Mí" data-cn="直接接触我">Direct Access to Me</li>
                     <li class="premium-only" data-en="VIP Discord Access" data-es="Acceso VIP a Discord" data-cn="VIP Discord访问">VIP Discord Access</li>
@@ -786,7 +786,7 @@
                 <div class="testimonial-tier" data-en="Pro Trader Member" data-es="Miembro Trader Profesional" data-cn="专业交易者会员">Pro Trader Member</div>
             </div>
             <div class="testimonial">
-                <div class="testimonial-text" data-en=""The 1-on-1 coaching on Core 6 strategies took my trading to the next level."" data-es=""El coaching 1-a-1 sobre estrategias Core 6 llevó mi trading al siguiente nivel."" data-cn=""关于Core 6策略的一对一指导将我的交易提升到了新水平。"">"The 1-on-1 coaching on Core 6 strategies took my trading to the next level."</div>
+                <div class="testimonial-text" data-en=""The 30-minute coaching sessions are perfectly focused. I get exactly what I need without wasting time."" data-es=""Las sesiones de coaching de 30 minutos están perfectamente enfocadas. Obtengo exactamente lo que necesito sin perder tiempo."" data-cn=""30分钟的指导课程非常专注。我能得到所需的一切，不浪费时间。"">"The 30-minute coaching sessions are perfectly focused. I get exactly what I need without wasting time."</div>
                 <div class="testimonial-author">James T.</div>
                 <div class="testimonial-tier" data-en="Pro Trader Member" data-es="Miembro Trader Profesional" data-cn="专业交易者会员">Pro Trader Member</div>
             </div>
@@ -809,7 +809,7 @@
         
         <div class="faq-item">
             <div class="faq-question" data-en="How does the 1-on-1 coaching work?" data-es="¿Cómo funciona el coaching 1-a-1?" data-cn="一对一指导如何运作？">How does the 1-on-1 coaching work?</div>
-            <div class="faq-answer" data-en="Pro Trader members get 1-on-1 video calls with me to review portfolios, discuss strategies, and create custom plans." data-es="Los miembros Trader Profesional obtienen llamadas de video 1-a-1 conmigo para revisar portafolios, discutir estrategias y crear planes personalizados." data-cn="专业交易者会员与我进行一对一视频通话，审查投资组合，讨论策略，并制定定制计划。">Pro Trader members get 1-on-1 video calls with me to review portfolios, discuss strategies, and create custom plans.</div>
+            <div class="faq-answer" data-en="Pro Trader members get 30-minute focused video calls with me via Zoom. Book your session through our integrated calendar system and receive automatic meeting links." data-es="Los miembros Trader Profesional obtienen llamadas de video enfocadas de 30 minutos conmigo a través de Zoom. Reserva tu sesión a través de nuestro sistema de calendario integrado y recibe enlaces de reunión automáticos." data-cn="专业交易者会员通过Zoom与我进行30分钟的专注视频通话。通过我们的集成日历系统预约您的会话并接收自动会议链接。">Pro Trader members get 30-minute focused video calls with me via Zoom. Book your session through our integrated calendar system and receive automatic meeting links.</div>
         </div>
         
         <div class="faq-item">
@@ -941,6 +941,25 @@ Please send TradingView invite for exclusive Core 6 Indicator.`);
             }
         }
 
+        // PERSONAL COACHING BOOKING FUNCTION
+        function bookCoachingSession() {
+            // Verify Pro Trader membership first
+            const isPro = confirm("🎯 CORE 6 PERSONAL COACHING\n\n⚠️ EXCLUSIVE ACCESS:\n✅ Pro Trader members ($500/month) ONLY\n❌ NOT available to Premium Starter ($50/month)\n\n💰 Are you a current Pro Trader member?\n\nClick OK if YES, Cancel to upgrade to Pro Trader.");
+            
+            if (!isPro) {
+                alert("❌ COACHING ACCESS DENIED\n\n🚫 Personal Coaching requires Pro Trader membership ($500/month)\n\n📈 Premium Starter ($50/month) does NOT include coaching\n\nPlease upgrade to Pro Trader to book your coaching session!");
+                // Scroll to Pro Trader payment section
+                document.getElementById('proPayment').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+            
+            // Open Calendly booking page for verified Pro Trader members
+            window.open('https://calendly.com/core6tradingsystem/30min', '_blank');
+            
+            // Success message
+            alert("✅ OPENING CORE 6 COACHING CALENDAR\n\n📅 Select your preferred time slot\n🎯 30-minute focused coaching session\n⏰ Perfect duration for targeted Core 6 training\n🔗 Zoom link will be sent automatically\n\nLooking forward to our session! 🚀");
+        }
+
         // Initialize language toggle when page loads
         document.addEventListener('DOMContentLoaded', function() {
             initLanguageToggle();
@@ -986,7 +1005,7 @@ Please send TradingView invite for exclusive Core 6 Indicator.`);
             answer.style.display = 'none';
         });
 
-        console.log('Core 6 Trading System - Professional Premium Platform');
+        console.log('Core 6 Trading System - Professional Premium Platform with Calendly Integration');
     </script>
 </body>
 </html>
